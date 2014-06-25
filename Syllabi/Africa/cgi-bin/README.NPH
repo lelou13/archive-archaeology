@@ -1,0 +1,135 @@
+______________________________________________________________________________
+_ Redirection Script                Version 2.3                              _
+_ Created on 4/10/96                Last Modified: 05/30/96 13:45            _
+_ Scripts Found at:                 http://www.terminalp.com/scripts/        _
+_ Copyright 1996 By Jeff Carnahan   jeffc@terminalp.com                      _
+______________________________________________________________________________
+_ If you run into any problems while trying to configure this scripts, help  _
+_ is available.  The steps you should take to get the fastest results, are:  _
+_       1) Read this file thoroughly                                         _
+_       2) If you are still having difficulty installing this script, send   _
+_          e-mail to: script-help@terminalp.com                              _
+_          Include any error messages you are receiving and as much detail   _
+_          as you can so I can spot your problem.  Also, please include      _
+_          the variables at the top of the script.                           _
+_                                                                            _
+_   Hopefully I will be able to help you solve your problems.  Thank you.    _
+______________________________________________________________________________
+_ Copyright (C) 1996 Jeffrey D. Carnahan                                     _
+_                                                                            _
+_ This program is free software; you can redistribute it and/or modify       _
+_ it under the terms of the GNU General Public License as published by       _
+_ the Free Software Foundation; either version 2 of the License, or (at      _
+_ your option) any later version.                                            _
+_                                                                            _
+_ This program is distributed in the hope that it will be useful, but        _
+_ WITHOUT ANY WARRANTY; without even the implied warranty of                 _
+_ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU           _
+_ General Public License for more details.                                   _
+_                                                                            _
+_ A full copy of the GNU General Public License can be retrieved from        _
+_ http://www.terminalp.com/scripts/copying.html                              _
+_                                                                            _
+_ - Jeff Carnahan <jeffc@terminalp.com>                                      _
+______________________________________________________________________________
+
+
+This script is to be used to redirect users based upon the information
+stored in different form elements.  When users click on the Submit button,
+the script runs, and automatically sends them to the new URL.  This is
+very useful for people who want to have navigation forms, or simply
+Submit buttons where clicking on the button would redirect the user to a
+new location.
+
+The script, nph-redr.pl, needs to be placed in your server's cgi-bin and the 
+anonymous WWW user must have the ability to read/execute the script.
+
+**** IMPORTANT NOTE ****:
+        The script *MUST* be named 'nph-something' to run.. THE 'nph-' IS
+    CRUCIAL TO THE SCRIPT, IF IT ISN'T NAMED 'nph-something', IT WILL NOT
+    RUN!
+
+    (Ok, I'm over the caps thing now.. <grin>)
+
+Setting Up the Redirection Script:
+==================================
+
+The nph-redr.pl script does not have to be extensively configured to get 
+it to work.  In fact, there is only 1 line you need to modify under the 
+nph-redr.pl script. You must make sure the top line of the script to matches
+the location of you Perl interpreter.
+
+You can find the location of your perl interpreter on your system, by
+executing the command: 'which perl' at the Unix command prompt.  A typical use
+of this command looks like this:
+
+$ which perl
+/usr/local/bin/perl
+$ 
+
+In this case, you have just found that the location of Perl on your system to be
+"/usr/local/bin/perl".  To update the nph-redr.pl script, you need to append
+this value to '#!'.  So, for this example, the first line the nph-redr.pl 
+script should look like:
+
+#!/usr/local/bin/perl
+
+Necessary Variables:
+--------------------
+
+    There Are None!  Woo!
+
+    However, to configure the script for your WWW Server, you need to complete
+    the following steps:
+    
+    1) Type "chmod 755 nph-redir.pl" in the directory where nph-redir.pl resides.
+       (This makes your script executable)
+
+    2) Get a glass of Milk and Cookies.
+
+A Sample Session looks like:
+
+<--- Start Of Captured Session --->
+$
+$ chmod 755 nph-redir.pl
+$
+<--- End Of Captured Session --->
+
+
+
+Updating The HTML File:
+------------------------
+    Next comes updating the given HTML file.  This should be simple, as you
+    only need to change the settings to your own liking.
+    First, note the different ways the script can be invoked.  With each
+    method, we are sending one feild of information to the script, and this
+    feild is named 'dest'.  This feild contains the Internet URL that you
+    want the user to be redirected to.
+
+    If you want to redirect users to specific frames, you should add a
+    hidden field inside your document called 'target'.  An example of
+    redirecting a user to Yahoo, in a frame called "main" would look like
+    this:
+
+    <form action="/nph-redir.pl" method="POST">
+      <input type="HIDDEN" name="target" value="main">
+      <input type="HIDDEN" name="dest"   value="http://www.yahoo.com">
+      <input type="SUBMIT" value="Click Here To Visit Yahoo">
+    </form>
+
+    Note how I used a hidden field to point the script to the 'main' frame.
+
+    Also note that since there are no variables you need to configure within
+    the script, you can use an unlimited amount of HTML pages to interface 
+    with it.
+    
+-----------------------------------------------------------------------------
+
+History:
+Version 1.0     4/10/96 -  This script was created.
+        2.1     5/5/96  -  Possible problem with Spry Mosaic Fixed.
+        2.2     5/18/96 -  Added Frame Targeting (by request)
+        2.3     5/30/96 -  Fixed a problem w/ Frames..
+
+-----------------------------------------------------------------------------
+Jeff Carnahan - (jeffc@terminalp.com) - http://www.terminalp.com/scripts/

@@ -1,0 +1,1483 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)https://www.donhost.co.uk/order/order.asp -->
+<HTML><HEAD><TITLE>Web Site Hosting Registration - Donhost UK</TITLE><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" --><LINK 
+href="Web Site Hosting Registration - Donhost UK_files/stylesheet.css" 
+type=text/css rel=stylesheet><!-- InstanceBeginEditable name="head" -->
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META lang=en 
+content="Sign up for web site hosting registration to instantly activate web hosting package" 
+name=description>
+<META lang=en 
+content="web site hosting UK, hosting packages, collocation, web site hosting registration, domain name registration, domain registration services, web hosting, business web hosting, business web site hosting packages, web hosting plans, web hosting packages, php scripting, email virus scanning, spam bouncer mail filtering, email auto responders, webmail, online control panel, domain name registration, web hosting management, donhost" 
+name=keywords>
+<META content="Web Site Hosting Registration - Donhost UK" name=title>
+<META content=index,follow name=robots>
+<META content=global name=distribution>
+<META content=general name=rating>
+<META http-equiv=content-language content=en>
+<SCRIPT language=JavaScript type=text/JavaScript>
+<!--
+function BuildUsername() {
+  if (document.forms[0].username.value == "") {
+    var Array = document.forms[0].domain.value.split(".");
+	Array[0] = Array[0].toLowerCase();
+	var RefString="abcdefghijklmnopqrstuvwxyz";
+	var TempChar;
+	var Username = "";
+	for (i=0; i < Array[0].length; i++) {
+	  TempChar = Array[0].substring (i, i+1);
+	  if (RefString.indexOf (TempChar,0) > -1) {
+	    Username = Username + TempChar;
+	  }
+	}
+	document.forms[0].username.value = Username.substring(0,16);
+  }
+}
+
+function ShowHideVatInput() {
+  if (document.forms[0].payment_method[0].checked && document.forms[0].show_cardholder.checked == false) {
+    var Array = document.forms[0].bcountry.value.split("|");
+  } else {
+    var Array = document.forms[0].country.value.split("|");
+  }
+  
+  if (Array.length == 2) {
+    document.getElementById("row_vatno").style.display = "";
+  } else {
+    document.getElementById("row_vatno").style.display = "none";
+  }
+}
+
+function ShowHideCardHolder() {
+  for (i=0; i<8; i++) {
+    if (document.forms[0].payment_method[0].checked && document.forms[0].show_cardholder.checked == false) {
+      if (document.forms[0].bforename.value == "" && document.forms[0].bsurname.value == "" && document.forms[0].bcompany.value == "" && document.forms[0].baddress.value == "" && document.forms[0].bcity.value == "" && document.forms[0].bcounty.value == "" && document.forms[0].bzip.value == ""  && document.forms[0].bphone.value == "" && document.forms[0].bemail.value == "") {
+	    document.forms[0].bforename.value = document.forms[0].forename.value;
+	    document.forms[0].bsurname.value = document.forms[0].surname.value;
+		document.forms[0].bcompany.value = document.forms[0].company.value;
+		document.forms[0].baddress.value = document.forms[0].address.value;
+		document.forms[0].bcity.value = document.forms[0].city.value;
+		document.forms[0].bcounty.value = document.forms[0].county.value;
+		document.forms[0].bzip.value = document.forms[0].zip.value;
+		document.forms[0].bphone.value = document.forms[0].phone.value;
+		document.forms[0].bemail.value = document.forms[0].email.value;
+	  }
+	  document.getElementById("row_card_holder_" + i).style.display = "";
+    } else {
+      document.getElementById("row_card_holder_" + i).style.display = "none";
+    }
+  }
+}
+
+function ShowHideCardInput() {
+  if (document.forms[0].payment_method[1].checked) {
+    var Array = document.forms[0].plan.value.split("|")
+    if (document.forms[0].billing[2].checked == false && Array.length == 4) { 
+      if (confirm("You may settle your account by cheque or bank transfer on an annual billing cycle only. Change to an annual billing cycle?")) {
+	    document.forms[0].billing[2].checked = true;
+	  } else {
+	    document.forms[0].payment_method[0].checked = true;
+	    document.forms[0].payment_method[1].checked = false;
+	  }
+	}
+  }
+
+  for (i=0; i<9; i++) {
+    if (document.forms[0].payment_method[0].checked) {
+      document.getElementById("row_card_details_" + i).style.display = "";
+    } else {
+      document.getElementById("row_card_details_" + i).style.display = "none";
+    }
+  }
+  
+  ShowHideCardHolder();
+}
+
+function ChangeBillingCycle() {
+  if (document.forms[0].payment_method[1].checked) {
+    if (confirm("Monthly and quarterly billing is available only when paying by credit/debit card. Change to credit/debit card payment?")) {
+	  document.forms[0].payment_method[0].checked = true;
+	  ShowHideCardInput();
+	} else {
+	  document.forms[0].billing[0].checked = true;
+	  document.forms[0].billing[1].checked = true;
+	  document.forms[0].billing[2].checked = true;
+	}
+  }
+}
+
+function ShowHideTermInput() {
+  if (document.forms[0].regtype[0].checked) {
+    if (document.forms[0].domain.value.substring(document.forms[0].domain.value.lastIndexOf(".")+1,document.forms[0].domain.value.length) == "uk") {
+      document.getElementById("row_term").style.display = "none";
+	} else {
+	  document.getElementById("row_term").style.display = "";
+	}
+  } else {
+    document.getElementById("row_term").style.display = "none";
+  }
+}
+
+function UpdatePricing() {
+  var Array = document.forms[0].plan.value.split("|")
+  if (Array.length == 4) { 
+    document.getElementById("row_billing").style.display = "";
+    document.getElementById("monthly_price").innerHTML = "&pound;" + Array[1] + " per month"
+    document.getElementById("quarterly_price").innerHTML = "&pound;" + Array[2] + " per quarter"
+    document.getElementById("annually_price").innerHTML = "&pound;" + Array[3] + " per year"
+	if (document.forms[0].payment_method[1].checked) {
+      document.forms[0].billing[0].checked = false;
+	  document.forms[0].billing[1].checked = false;
+	  document.forms[0].billing[2].checked = true;
+	}
+  } else {
+    document.getElementById("row_billing").style.display = "none";
+  }
+}
+
+HelpText = new Array;
+HelpText['domain'] = "Enter the domain name that you wish to register or transfer. This should be the primary domain name that you wish to use with your account, you can add additional domain names via your control panel later.";
+HelpText['regtype'] = "If you already own the domain name and wish to transfer it into our control select 'Transfer', otherwise select 'New Registration' to register a new domain name.";
+HelpText['term'] = "Select the number of years you wish to register the domain name for.";
+HelpText['plan'] = "Choose your hosting plan from drop-down list. If you just wish to register your domain name and do not want a web site yet, select 'Domain Parking'.";
+HelpText['billing'] = "All of our hosting plans are available on monthly, quarterly or annual billing cycles. Select whether you wish to be billed monthly, quarterly or annually. Payment by cheque or bank transfer is available on annual billing cycle only.";
+HelpText['username'] = "Enter a username to identify yourself on our system, this will be used to log on to the FTP server and control panel. The username must be between 2 and 16 characters and can contain lowercase letters only.";
+HelpText['account_owner'] = "Enter your contact details in the fields below. If you are registering a new domain name, its legal registrant will be the party you specify here. If you do not have an existing email address you cannot order online, please call our sales office on +44 (0)845 226 5566.";
+HelpText['payment_method'] = "Specify whether you wish to pay for your account online by credit or debit card, or whether you will settle your account offline by cheque or bank transfer. If you choose to pay by cheque or bank transfer we will email you a pro forma invoice and remittance advice with further instructions, your account will not be activated until we receive your payment.";
+HelpText['vatno'] = "You are inside the European Union but abroad from the United Kingdom. If you have a VAT number you may enter it here, otherwise you will be charged VAT on your order.";
+HelpText['promo'] = "If you have a special offer or promotion code from an advertisement, please enter it here.";
+HelpText['cardnumber'] = "Enter your credit or debit card number. This is normally the longer number or number in larger type on cards which show more than one number.";
+HelpText['expiry'] = "Select the month and year that your card expires from the drop-down list.";
+HelpText['cvv'] = "The card security code is a three digit number printed on your debit/credit card. Some card issuers refer to this number as the 'Card Security Code' others as the 'Personal Security Code' and others as 'Card Verification Value'.<br><br><div align='center'><img src='../images/security_code.gif'></div><br>Some cards, have a three digit number printed at the top of the signature strip on the reverse of the card. Whilst others have the number printed on the front of the card, above the main number. See the illustrations above for assistance identifying your card security code.";
+HelpText['begin'] = "If your card has a begin, start or valid from date, select the month and year from the drop-down list. This field is not applicable to all cards, if your card does not have a begin date, leave this field blank.";
+HelpText['issue'] = "If your card has an issue number, enter it here. This field is not applicable to all cards, if your card does not have an issue number, leave this field blank.";
+HelpText['card_owner'] = "If the registered name and address of the card you are using to pay (normally the name and address shown on the card statement) is not the same as those you have entered for the Account Owner above, uncheck this box and enter the card holder's contact details.";
+
+function PopUpHelp(field,yArg,xArg) {
+  if (yArg == undefined) { yArg = -10; }
+  if (xArg == undefined) { xArg = 20; }
+  document.getElementById("helptext").innerHTML = HelpText[field];
+  document.getElementById("helplayer").style.left = GetElementLeft(document.images[field]) + xArg;
+  document.getElementById("helplayer").style.top = GetElementTop(document.images[field]) + yArg;
+  document.getElementById("helplayer").style.visibility = "visible";
+}
+
+function GetElementLeft(eElement)
+{
+   if (!eElement && this)                    // if argument is invalid
+   {                                         // (not specified, is null or is 0)
+      eElement = this;                       // and function is a method
+   }                                         // identify the element as the method owner
+
+   var DL_bIE = document.all ? true : false; // initialize var to identify IE
+
+   var nLeftPos = eElement.offsetLeft;       // initialize var to store calculations
+   var eParElement = eElement.offsetParent;  // identify first offset parent element
+
+   while (eParElement != null)
+   {                                         // move up through element hierarchy
+
+      if(DL_bIE)                             // if browser is IE, then...
+      {
+         if( (eParElement.tagName != "TABLE") && (eParElement.tagName != "BODY") )
+         {                                   // if parent is not a table or the body, then...
+            nLeftPos += eParElement.clientLeft; // append cell border width to calcs
+         }
+      }
+      else                                   // if browser is Gecko, then...
+      {
+         if(eParElement.tagName == "TABLE")  // if parent is a table, then...
+         {                                   // get its border as a number
+            var nParBorder = parseInt(eParElement.border);
+            if(isNaN(nParBorder))            // if no valid border attribute, then...
+            {                                // check the table's frame attribute
+               var nParFrame = eParElement.getAttribute('frame');
+               if(nParFrame != null)         // if frame has ANY value, then...
+               {
+                  nLeftPos += 1;             // append one pixel to counter
+               }
+            }
+            else if(nParBorder > 0)          // if a border width is specified, then...
+            {
+               nLeftPos += nParBorder;       // append the border width to counter
+            }
+         }
+      }
+      nLeftPos += eParElement.offsetLeft;    // append left offset of parent
+      eParElement = eParElement.offsetParent; // and move up the element hierarchy
+   }                                         // until no more offset parents exist
+   return nLeftPos;                          // return the number calculated
+}
+
+function GetElementTop(eElement)
+{
+   if (!eElement && this)                    // if argument is invalid
+   {                                         // (not specified, is null or is 0)
+      eElement = this;                       // and function is a method
+   }                                         // identify the element as the method owner
+
+   var DL_bIE = document.all ? true : false; // initialize var to identify IE
+
+   var nTopPos = eElement.offsetTop;         // initialize var to store calculations
+   var eParElement = eElement.offsetParent;  // identify first offset parent element
+
+   while (eParElement != null)
+   {                                         // move up through element hierarchy
+      if(DL_bIE)                             // if browser is IE, then...
+      {
+         if( (eParElement.tagName != "TABLE") && (eParElement.tagName != "BODY") )
+         {                                   // if parent a table cell, then...
+            nTopPos += eParElement.clientTop; // append cell border width to calcs
+         }
+      }
+      else                                   // if browser is Gecko, then...
+      {
+         if(eParElement.tagName == "TABLE")  // if parent is a table, then...
+         {                                   // get its border as a number
+            var nParBorder = parseInt(eParElement.border);
+            if(isNaN(nParBorder))            // if no valid border attribute, then...
+            {                                // check the table's frame attribute
+               var nParFrame = eParElement.getAttribute('frame');
+               if(nParFrame != null)         // if frame has ANY value, then...
+               {
+                  nTopPos += 1;              // append one pixel to counter
+               }
+            }
+            else if(nParBorder > 0)          // if a border width is specified, then...
+            {
+               nTopPos += nParBorder;        // append the border width to counter
+            }
+         }
+      }
+
+      nTopPos += eParElement.offsetTop;      // append top offset of parent
+      eParElement = eParElement.offsetParent; // and move up the element hierarchy
+   }                                         // until no more offset parents exist
+   return nTopPos;                           // return the number calculated
+}
+//-->
+</SCRIPT>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="Javascript" -->
+<SCRIPT language=JavaScript type=text/JavaScript>
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</SCRIPT>
+<!-- InstanceEndEditable --><!-- InstanceParam name="onload" type="text" value="ShowHideTermInput(); UpdatePricing(); ShowHideCardInput(); ShowHideVatInput();" -->
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff topMargin=10 
+onload="MM_preloadImages('/images/common/products_f2.gif','/images/common/signup_f2.gif','/images/common/support_f2.gif','/images/common/header_r3_c3_ro.gif','/images/common/company_f2.gif','/images/common/home_icon_f2.gif','/images/common/sitemap_icon_f2.gif','../images/common/products_f2.gif','../images/common/signup_f2.gif','../images/common/company_f2.gif','../images/common/support_f2.gif','../images/common/header_r3_c3_ro.gif','../images/common/home_icon_f2.gif','../images/common/sitemap_icon_f2.gif');ShowHideTermInput(); UpdatePricing(); ShowHideCardInput(); ShowHideVatInput();">
+<TABLE class=TemplateTable cellSpacing=0 cellPadding=0 width=648 align=left 
+border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=646 height=117>
+      <TABLE cellSpacing=0 cellPadding=0 width=648 border=0>
+        <TBODY>
+        <TR>
+          <TD width=196 height=95 rowSpan=3>
+            <DIV id=products 
+            onmouseover="MM_swapImage('menu_products','','../images/common/products_f2.gif',1);MM_showHideLayers('products','','show')" 
+            style="Z-INDEX: 1; LEFT: 11px; VISIBILITY: hidden; WIDTH: 90px; POSITION: absolute; TOP: 49px" 
+            onmouseout="MM_showHideLayers('products','','hide');MM_swapImgRestore()">
+            <TABLE height=58 cellSpacing=0 cellPadding=5 width=90 
+            background="C:\Documents and Settings\nune0412\Desktop\Web Site Hosting Registration - Donhost UK_files\1pix_blue(1).gif">
+              <TBODY>
+              <TR>
+                <TD vAlign=top><A class=menulinks 
+                  href="http://www.donhost.co.uk/products/hosting.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Web Hosting</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/products/reseller.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Reseller</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/products/dedicated.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Dedicated</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/products/domains.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Domains</A></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=signup 
+            onmouseover="MM_showHideLayers('signup','','show');MM_swapImage('menu_signup','','../images/common/signup_f2.gif',1)" 
+            style="Z-INDEX: 1; LEFT: 101px; VISIBILITY: hidden; VERTICAL-ALIGN: baseline; WIDTH: 85px; POSITION: absolute; TOP: 73px" 
+            onmouseout="MM_showHideLayers('signup','','hide');MM_swapImgRestore()">
+            <TABLE height=34 cellSpacing=0 cellPadding=5 width=90 
+            background="C:\Documents and Settings\nune0412\Desktop\Web Site Hosting Registration - Donhost UK_files\1pix_blue(1).gif" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><A class=menulinks 
+                  href="https://www.donhost.co.uk/order/order.asp"><IMG height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Signup Now</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/order/terms.pl"><IMG height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Terms</A></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=corporate 
+            onmouseover="MM_showHideLayers('corporate','','show');MM_swapImage('menu_corporate','','../images/common/company_f2.gif',1)" 
+            style="Z-INDEX: 1; LEFT: 191px; VISIBILITY: hidden; VERTICAL-ALIGN: bottom; WIDTH: 85px; POSITION: absolute; TOP: 51px" 
+            onmouseout="MM_showHideLayers('corporate','','hide');MM_swapImgRestore()">
+            <TABLE height=58 cellSpacing=0 cellPadding=5 width=90 
+            background="C:\Documents and Settings\nune0412\Desktop\Web Site Hosting Registration - Donhost UK_files\1pix_blue(1).gif" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><A class=menulinks 
+                  href="http://www.donhost.co.uk/company/index.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> About Us</A><A class=menulinks 
+                  href="http://www.donhost.co.uk/company/technology.html"><BR><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Technology <BR></A><A class=menulinks 
+                  href="http://www.donhost.co.uk/company/jobs.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Employment</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/company/contact.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Contact Us</A></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=support 
+            onmouseover="MM_showHideLayers('support','','show');MM_swapImage('menu_support','','../images/common/support_f2.gif',1)" 
+            style="Z-INDEX: 1; LEFT: 282px; VISIBILITY: hidden; VERTICAL-ALIGN: bottom; WIDTH: 85px; POSITION: absolute; TOP: 73px" 
+            onmouseout="MM_showHideLayers('support','','hide');MM_swapImgRestore()">
+            <TABLE height=34 cellSpacing=0 cellPadding=5 width=90 
+            background="C:\Documents and Settings\nune0412\Desktop\Web Site Hosting Registration - Donhost UK_files\1pix_blue(1).gif" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><A class=menulinks 
+                  href="http://www.donhost.co.uk/support/index.pl"><IMG height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Support</A><BR><A class=menulinks 
+                  href="http://www.donhost.co.uk/support/login.html"><IMG 
+                  height=6 
+                  src="Web Site Hosting Registration - Donhost UK_files/right_arrow_blu.gif" 
+                  width=9 border=0> Control Panel</A> 
+            </TD></TR></TBODY></TABLE></DIV><A 
+            href="http://www.donhost.co.uk/index.html"><IMG id=logo height=95 
+            alt=Donhost 
+            src="Web Site Hosting Registration - Donhost UK_files/header_r1_c1.jpg" 
+            width=196 border=0 name=logo></A></TD>
+          <TD width=290 rowSpan=3><IMG height=95 
+            src="Web Site Hosting Registration - Donhost UK_files/header_r1_c2.jpg" 
+            width=290></TD>
+          <TD width=160><!-- InstanceBeginEditable name="BannerPhone" --><IMG 
+            height=35 alt="Call 0845 226 5566" 
+            src="Web Site Hosting Registration - Donhost UK_files/header_r1_c3.gif" 
+            width=162><!-- InstanceEndEditable --></TD></TR>
+        <TR>
+          <TD><!-- InstanceBeginEditable name="BannerEmail" --><A 
+            href="mailto:sales@donhost.co.uk"><IMG height=16 
+            alt="Email sales@donhost.co.uk" 
+            src="Web Site Hosting Registration - Donhost UK_files/header_r2_c3.gif" 
+            width=162 border=0></A><!-- InstanceEndEditable --></TD></TR>
+        <TR>
+          <TD height=19><A 
+            onmouseover="MM_swapImage('banner_signup','','../images/common/header_r3_c3_ro.gif',1)" 
+            onmouseout=MM_swapImgRestore() 
+            href="https://www.donhost.co.uk/order/order.asp"><IMG height=44 
+            alt="Signup Now! Instant Activation" 
+            src="Web Site Hosting Registration - Donhost UK_files/header_r3_c3.gif" 
+            width=162 border=0 name=banner_signup></A></TD></TR>
+        <TR>
+          <TD colSpan=3 height=22>
+            <TABLE class=TemplateTableRow height=20 cellSpacing=0 cellPadding=0 
+            width="100%" align=center border=0>
+              <TBODY>
+              <TR>
+                <TD width=90 height=20><A 
+                  href="http://www.donhost.co.uk/products/index.html"><IMG 
+                  onmouseover="MM_showHideLayers('products','','show');MM_swapImage('menu_products','','../images/common/products_f2.gif',1)" 
+                  onmouseout="MM_showHideLayers('products','','hide');MM_swapImgRestore()" 
+                  height=20 alt=Products 
+                  src="Web Site Hosting Registration - Donhost UK_files/products.gif" 
+                  width=90 border=0 name=menu_products></A></TD>
+                <TD width=90 height=20><A 
+                  onmouseover="MM_swapImage('menu_signup','','../images/common/signup_f2.gif',1)" 
+                  onmouseout=MM_swapImgRestore() 
+                  href="https://www.donhost.co.uk/order/order.asp"><IMG 
+                  onmouseover="MM_showHideLayers('signup','','show')" 
+                  onmouseout="MM_showHideLayers('signup','','hide')" height=20 
+                  alt=Signup 
+                  src="Web Site Hosting Registration - Donhost UK_files/signup.gif" 
+                  width=90 border=0 name=menu_signup></A></TD>
+                <TD width=90 height=20><A 
+                  onmouseover="MM_swapImage('menu_corporate','','../images/common/company_f2.gif',1)" 
+                  onmouseout=MM_swapImgRestore() 
+                  href="http://www.donhost.co.uk/company/index.html"><IMG 
+                  onmouseover="MM_showHideLayers('corporate','','show')" 
+                  onmouseout="MM_showHideLayers('corporate','','hide')" 
+                  height=20 alt=Company 
+                  src="Web Site Hosting Registration - Donhost UK_files/company.gif" 
+                  width=90 border=0 name=menu_corporate></A></TD>
+                <TD width=332 height=20><A 
+                  onmouseover="MM_swapImage('menu_support','','../images/common/support_f2.gif',1)" 
+                  onmouseout=MM_swapImgRestore() 
+                  href="http://www.donhost.co.uk/support/index.pl"><IMG 
+                  onmouseover="MM_showHideLayers('support','','show')" 
+                  onmouseout="MM_showHideLayers('support','','hide')" height=20 
+                  alt=Support 
+                  src="Web Site Hosting Registration - Donhost UK_files/support.gif" 
+                  width=90 border=0 name=menu_support></A></TD>
+                <TD width=46 height=20><A 
+                  onmouseover="MM_swapImage('home_icon','','../images/common/home_icon_f2.gif',1)" 
+                  onmouseout=MM_swapImgRestore() 
+                  href="http://www.donhost.co.uk/index.html"><IMG height=20 
+                  alt=Home 
+                  src="Web Site Hosting Registration - Donhost UK_files/home_icon.gif" 
+                  width=23 border=0 name=home_icon></A><A 
+                  onmouseover="MM_swapImage('Sitemap','','../images/common/sitemap_icon_f2.gif',1)" 
+                  onmouseout=MM_swapImgRestore() 
+                  href="http://www.donhost.co.uk/sitemap.html"><IMG height=20 
+                  alt=Sitemap 
+                  src="Web Site Hosting Registration - Donhost UK_files/sitemap_icon.gif" 
+                  width=22 border=0 
+        name=Sitemap></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=150 height=128 rowSpan=4><!-- InstanceBeginEditable name="Sidebar" -->
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top height=0><!-- #BeginLibraryItem "/Library/nav_bar_order.lbi" -->
+                  <TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <TABLE class=Tablemenus cellSpacing=0 cellPadding=1 
+                        width="100%" border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><IMG height=6 
+                              src="Web Site Hosting Registration - Donhost UK_files/right_arrow.gif" 
+                              width=17><A class=menulinks 
+                              href="https://www.donhost.co.uk/order/order.asp">Signup 
+                              Now </A></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD>
+                        <TABLE class=Tablemenus cellSpacing=0 cellPadding=1 
+                        width="100%" border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><IMG height=6 
+                              src="Web Site Hosting Registration - Donhost UK_files/right_arrow.gif" 
+                              width=17><A class=menulinks 
+                              href="http://www.donhost.co.uk/order/terms.pl">Terms 
+                              &amp; 
+                    Conditions</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- #EndLibraryItem --></TD></TR>
+              <TR>
+                <TD height=0><IMG height=1 
+                  src="Web Site Hosting Registration - Donhost UK_files/dotted_line_150px.gif" 
+                  width=150></TD></TR>
+              <TR>
+                <TD vAlign=top height=34>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top height=35>
+                        <DIV align=center><IMG height=155 
+                        src="Web Site Hosting Registration - Donhost UK_files/credit_cards.gif" 
+                        width=150> </DIV></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD><IMG 
+                  src="Web Site Hosting Registration - Donhost UK_files/dotted_line_150px.gif"></TD></TR>
+              <TR>
+                <TD vAlign=top height=104><!-- #BeginLibraryItem "/Library/Testimonial_howard_cliff.lbi" -->
+                  <TABLE height=144 cellSpacing=0 cellPadding=0 width=140 
+                  align=center border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top colSpan=2 height=4><IMG height=4 
+                        src="Web Site Hosting Registration - Donhost UK_files/4x4pix_trans.gif" 
+                        width=4></TD></TR>
+                    <TR>
+                      <TD vAlign=top><IMG height=57 
+                        src="Web Site Hosting Registration - Donhost UK_files/howard_cliffe_small.gif" 
+                        width=51></TD>
+                      <TD vAlign=top width="100%"><SPAN 
+                        class=greytext><STRONG>"</STRONG>Donhost was recommended 
+                        to us here at Modelsport UK, and now</SPAN></TD></TR>
+                    <TR>
+                      <TD vAlign=top colSpan=2 height=84><SPAN 
+                        class=greytext>provides all our internet services. I 
+                        have been extremely pleased with their level of service, 
+                        and have always found Donhost to be approachable, 
+                        friendly and efficient. Contrary to our previous ISP 
+                        experiences, any problems have always been dealt with 
+                        speedily and with minimum fuss or disruption of service. 
+                        Information is easily accessed, and charges are very 
+                        fairly and transparently applied. I can thoroughly 
+                        recommend Donhost to anyone looking for a truly 
+                        professional and competitive 
+                        ISP.<STRONG>"</STRONG><BR><STRONG>Howard 
+                        Cliff<BR>Modelsport UK</STRONG></SPAN></TD></TR>
+                    <TR>
+                      <TD vAlign=top colSpan=2 height=4><IMG height=4 
+                        src="Web Site Hosting Registration - Donhost UK_files/4x4pix_trans.gif" 
+                        width=4></TD></TR></TBODY></TABLE><!-- #EndLibraryItem --></TD></TR>
+              <TR>
+                <TD height=1><IMG height=1 
+                  src="Web Site Hosting Registration - Donhost UK_files/dotted_line_150px.gif" 
+                  width=150></TD></TR>
+              <TR>
+                <TD vAlign=top bgColor=#ffffff>
+                  <DIV align=center><BR><!-- GeoTrust QuickSSL [tm] Smart Icon tag. Do not edit. -->
+                  <SCRIPT language=JavaScript 
+                  src="Web Site Hosting Registration - Donhost UK_files/si.js" 
+                  type=text/javascript></SCRIPT>
+<!-- end GeoTrust Smart Icon tag --><BR><IMG height=79 
+                  src="Web Site Hosting Registration - Donhost UK_files/bms_worldpay.gif" 
+                  width=149> </DIV></TD></TR>
+              <TR>
+                <TD vAlign=top height=1><IMG height=1 
+                  src="Web Site Hosting Registration - Donhost UK_files/dotted_line_150px.gif" 
+                  width=150></TD></TR></TBODY></TABLE><!-- InstanceEndEditable --></TD>
+          <TD vAlign=top width=1 
+          background="Web Site Hosting Registration - Donhost UK_files/1pix_dot.gif" 
+          rowSpan=4><IMG height=3 
+            src="Web Site Hosting Registration - Donhost UK_files/1pix_dot.gif" 
+            width=1></TD>
+          <TD vAlign=top width="100%" height=400>
+            <TABLE cellSpacing=0 cellPadding=0 width=473 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD vAlign=bottom height=14></TD></TR>
+              <TR>
+                <TD vAlign=bottom height=19><!-- InstanceBeginEditable name="Product header" -->
+                  <H1>Order<SPAN class=HeaderSpan>Online</SPAN></H1><!-- InstanceEndEditable --><IMG 
+                  height=15 
+                  src="Web Site Hosting Registration - Donhost UK_files/full_stop.gif" 
+                  width=9></TD></TR>
+              <TR>
+                <TD vAlign=bottom height=5></TD></TR>
+              <TR>
+                <TD height=2><IMG height=1 
+                  src="Web Site Hosting Registration - Donhost UK_files/1pix_blue.gif" 
+                  width=473></TD></TR>
+              <TR>
+                <TD class=sub_title vAlign=top align=right height=18><!-- InstanceBeginEditable name="Sub Title" --><!-- InstanceEndEditable --></TD></TR>
+              <TR>
+                <TD vAlign=top height=18><!-- InstanceBeginEditable name="Main Body" -->
+                  <DIV class=message align=center></DIV>
+                  <P>To place your order securely on-line, follow the simple 
+                  steps starting below. You will have the opportunity to preview 
+                  your order and total amount before it is processed.</P>
+                  <P>If you choose to pay by credit or debit card you will 
+                  receive email confirmation of your order and your account will 
+                  be ready to use immediately. If you choose to pay by cheque or 
+                  bank transfer we will send you a pro forma invoice and your 
+                  account will be set-up when we receive your remittance.</P>
+                  <P>If you require any assistance or would prefer to place your 
+                  order by telephone, please call our sales office on 0845 226 
+                  5566.</P>
+                  <DIV id=helplayer 
+                  style="DISPLAY: block; Z-INDEX: 2; LEFT: 0px; VISIBILITY: hidden; WIDTH: 200px; POSITION: absolute; TOP: 0px">
+                  <TABLE class=helptableborder cellSpacing=0 cellPadding=4 
+                  width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD id=helptext></TD></TR></TBODY></TABLE></DIV>
+                  <FORM name=order_form action=order.asp method=post><SPAN 
+                  class=required>*</SPAN> denotes required field<BR><BR>
+                  <TABLE class=tableborder cellSpacing=0 cellPadding=4 
+                  width="100%" align=center border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=sub_title colSpan=4>Domain Name</TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Domain Name</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=domain 
+                        onchange=ShowHideTermInput();BuildUsername() size=30 
+                        name=domain> <IMG id=domain 
+                        onmouseover="PopUpHelp('domain')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=middle border=0 name=domain></TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right width="29%">&nbsp;<SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Registration&nbsp;Type</SPAN></TD>
+                      <TD colSpan=3><INPUT onclick=ShowHideTermInput() 
+                        type=radio value=new name=regtype><SPAN class=table>New 
+                        Registration</SPAN> <INPUT onclick=ShowHideTermInput() 
+                        type=radio CHECKED value=transfer 
+                        name=regtype>Transfer&nbsp;&nbsp;<IMG id=regtype 
+                        onmouseover="PopUpHelp('regtype')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=regtype></TD></TR>
+                    <TR id=row_term>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Registration&nbsp;Term</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields name=term> 
+                          <OPTION value=1 selected>1 Year</OPTION><OPTION 
+                          value=2>2 Years</OPTION><OPTION value=3>3 
+                          Years</OPTION><OPTION value=4>4 Years</OPTION><OPTION 
+                          value=5>5 Years</OPTION></SELECT> <IMG id=term 
+                        onmouseover="PopUpHelp('term')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=term></TD></TR>
+                    <TR>
+                      <TD class=table_top colSpan=4 height=15></TD></TR>
+                    <TR>
+                      <TD class=sub_title colSpan=4>Hosting Plan </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Hosting&nbsp;Plan</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields 
+                        onchange=UpdatePricing() name=plan> <OPTION 
+                          value=commerce|17.99|49.99|179.99 selected>Commerce 
+                          Plan</OPTION><OPTION 
+                          value=designer|11.99|32.99|119.99>Designer 
+                          Plan</OPTION><OPTION 
+                          value=developer|25.99|71.99|259.99>Developer 
+                          Plan</OPTION><OPTION 
+                          value=enterprise|8.99|24.99|89.99>Enterprise 
+                          Plan</OPTION><OPTION value=parking>Domain 
+                          Parking</OPTION><OPTION 
+                          value=reseller|79.99|219.99|799.99>Reseller 
+                          Pro</OPTION><OPTION 
+                          value=unixreseller|39.99|109.99|399.99>Reseller 
+                          UNIX</OPTION><OPTION 
+                          value=winreseller|49.99|137.99|499.99>Reseller 
+                          Windows</OPTION></SELECT> <IMG id=plan 
+                        onmouseover="PopUpHelp('plan')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=plan></TD></TR>
+                    <TR id=row_billing>
+                      <TD vAlign=top align=right height=50><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Billing&nbsp;Cycle</SPAN></TD>
+                      <TD colSpan=3>
+                        <P><INPUT onclick=ChangeBillingCycle() type=radio 
+                        CHECKED value=monthly name=billing> <SPAN class=table 
+                        id=monthly_price>Monthly</SPAN><BR><INPUT 
+                        onclick=ChangeBillingCycle() type=radio value=quarterly 
+                        name=billing> <SPAN class=table 
+                        id=quarterly_price>Quarterly</SPAN>&nbsp;&nbsp;<IMG 
+                        id=billing onmouseover="PopUpHelp('billing')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=middle border=0 name=billing><BR><INPUT 
+                        type=radio value=annually name=billing> <SPAN 
+                        class=table id=annually_price>Annually</SPAN></P></TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Username</SPAN></TD>
+                      <TD colSpan=3><SPAN class=smallprint><INPUT 
+                        class=FormFields maxLength=16 size=22 name=username> 
+                        </SPAN><IMG id=username 
+                        onmouseover="PopUpHelp('username')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 
+                        name=username>&nbsp;Lower case letters only</TD></TR>
+                    <TR>
+                      <TD class=table_top colSpan=4 height=15></TD></TR>
+                    <TR>
+                      <TD class=sub_title colSpan=4>Account Owner <IMG 
+                        id=account_owner 
+                        onmouseover="PopUpHelp('account_owner',-90)" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 
+                    name=account_owner></TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Forename</SPAN></TD>
+                      <TD vAlign=top width="29%"><INPUT class=FormFields 
+                        size=15 name=forename> </TD>
+                      <TD vAlign=top align=right width="17%"><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Surname</SPAN></TD>
+                      <TD vAlign=top width="25%"><INPUT class=FormFields 
+                        size=12 name=surname> </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=table_top>Company</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 
+                        name=company> </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Address</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 
+                        name=address> </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;City</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 name=city> 
+                      </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;County</SPAN></TD>
+                      <TD vAlign=top><INPUT class=FormFields size=15 
+                        name=county> </TD>
+                      <TD vAlign=top align=right><SPAN 
+                        class=table_top>&nbsp;Post&nbsp;Code</SPAN></TD>
+                      <TD vAlign=top><INPUT class=FormFields size=8 name=zip> 
+                      </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Country</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields 
+                        onchange=ShowHideVatInput() name=country> <OPTION 
+                          value=GB selected>United Kingdom</OPTION> <OPTION 
+                          value=US>United States</OPTION> <OPTION 
+                          value=IE|VAT>Ireland</OPTION> <OPTION 
+                          value="">--------------------</OPTION><OPTION 
+                          value=AF>Afganistan</OPTION> <OPTION 
+                          value=AL>Albania</OPTION> <OPTION 
+                          value=DZ>Algeria</OPTION> <OPTION value=AS>American 
+                          Samoa</OPTION> <OPTION value=AD>Andorra</OPTION> 
+                          <OPTION value=AO>Angola</OPTION> <OPTION 
+                          value=AI>Anguilla</OPTION> <OPTION 
+                          value=AQ>Antarctica</OPTION> <OPTION value=AG>Antigua 
+                          &amp; Barbuda</OPTION> <OPTION 
+                          value=AR>Argentina</OPTION> <OPTION 
+                          value=AM>Armenia</OPTION> <OPTION 
+                          value=AW>Aruba</OPTION> <OPTION 
+                          value=AU>Australia</OPTION> <OPTION 
+                          value=AT|VAT>Austria</OPTION> <OPTION 
+                          value=AZ>Azerbaijan</OPTION> <OPTION 
+                          value=BS>Bahamas</OPTION> <OPTION 
+                          value=BH>Bahrain</OPTION> <OPTION 
+                          value=BD>Bangladesh</OPTION> <OPTION 
+                          value=BB>Barbados</OPTION> <OPTION 
+                          value=BY>Belarus</OPTION> <OPTION 
+                          value=BE|VAT>Belgium</OPTION> <OPTION 
+                          value=BZ>Belize</OPTION> <OPTION 
+                          value=BJ>Benin</OPTION> <OPTION 
+                          value=BM>Bermuda</OPTION> <OPTION 
+                          value=BT>Bhuyan</OPTION> <OPTION 
+                          value=BO>Bolivia</OPTION> <OPTION value=BA>Bosnia 
+                          &amp; Herzegowina</OPTION> <OPTION 
+                          value=BW>Botswana</OPTION> <OPTION value=BV>Bouvet 
+                          Island</OPTION> <OPTION value=BR>Brazil</OPTION> 
+                          <OPTION value=BG>Bulgaria</OPTION> <OPTION 
+                          value=BF>Burkina Faso</OPTION> <OPTION 
+                          value=BI>Burundi</OPTION> <OPTION 
+                          value=KH>Cambodia</OPTION> <OPTION 
+                          value=CM>Cameroon</OPTION> <OPTION 
+                          value=CA>Canada</OPTION> <OPTION value=CV>Cape 
+                          Verde</OPTION> <OPTION value=KY>Cayman 
+                          Islands</OPTION> <OPTION value=CF>Central African 
+                          Republic</OPTION> <OPTION value=TD>Chad</OPTION> 
+                          <OPTION value=JG|VAT>Channel Islands (U.K.)</OPTION> 
+                          <OPTION value=CL>Chile</OPTION> <OPTION 
+                          value=CN>China</OPTION> <OPTION value=CX>Christmas 
+                          Island</OPTION> <OPTION value=CC>Cocos 
+                          Islands</OPTION> <OPTION value=CO>Colombia</OPTION> 
+                          <OPTION value=KM>Comoros</OPTION> <OPTION 
+                          value=CG>Congo</OPTION> <OPTION value=CD>Congo, Dem. 
+                          Rep. Of</OPTION> <OPTION value=CK>Cook 
+                          Islands</OPTION> <OPTION value=CR>Costa Rica</OPTION> 
+                          <OPTION value=CI>Cote D'Ivoire</OPTION> <OPTION 
+                          value=HR>Croatia</OPTION> <OPTION 
+                          value=CU>Cuba</OPTION> <OPTION 
+                          value=CY>Cyprus</OPTION> <OPTION value=CZ>Czech 
+                          Republic</OPTION> <OPTION 
+                          value=DK|VAT>Denmark</OPTION> <OPTION 
+                          value=DJ>Djibouti</OPTION> <OPTION 
+                          value=DM>Dominica</OPTION> <OPTION value=DO>Dominican 
+                          Republic</OPTION> <OPTION value=TP>East Timor</OPTION> 
+                          <OPTION value=EG>Egypt</OPTION> <OPTION value=SV>El 
+                          Salvador</OPTION> <OPTION value=EC>Equador</OPTION> 
+                          <OPTION value=GQ>Equatorial Guinea</OPTION> <OPTION 
+                          value=ER>Eritrea</OPTION> <OPTION 
+                          value=EE>Estonia</OPTION> <OPTION 
+                          value=ET>Ethiopia</OPTION> <OPTION value=FK>Falkland 
+                          Islands</OPTION> <OPTION value=FO>Faroe 
+                          Islands</OPTION> <OPTION value=FJ>Fiji</OPTION> 
+                          <OPTION value=FI|VAT>Finland</OPTION> <OPTION 
+                          value=FR|VAT>France</OPTION> <OPTION value=FX>France, 
+                          Met.</OPTION> <OPTION value=GF>French Guiana</OPTION> 
+                          <OPTION value=PF>French Polynesia</OPTION> <OPTION 
+                          value=TF>French South. Ter.</OPTION> <OPTION 
+                          value=GA>Gabon</OPTION> <OPTION 
+                          value=GM>Gambia</OPTION> <OPTION 
+                          value=GE>Georgia</OPTION> <OPTION 
+                          value=DE|VAT>Germany</OPTION> <OPTION 
+                          value=GH>Ghana</OPTION> <OPTION 
+                          value=GI>Gibraltar</OPTION> <OPTION 
+                          value=GR>Greece</OPTION> <OPTION 
+                          value=GL>Greenland</OPTION> <OPTION 
+                          value=GD>Grenada</OPTION> <OPTION 
+                          value=GP>Guadeloupe</OPTION> <OPTION 
+                          value=GU>Guam</OPTION> <OPTION 
+                          value=GT>Guatemala</OPTION> <OPTION 
+                          value=GN>Guinea</OPTION> <OPTION 
+                          value=GW>Guinea-Bissau</OPTION> <OPTION 
+                          value=GY>Guyana</OPTION> <OPTION 
+                          value=HT>Hati</OPTION> <OPTION 
+                          value=HN>Hondras</OPTION> <OPTION value=HK>Hong 
+                          Kong</OPTION> <OPTION value=HU>Hungary</OPTION> 
+                          <OPTION value=IS>Iceland</OPTION> <OPTION 
+                          value=IN>India</OPTION> <OPTION 
+                          value=ID>Indonesia</OPTION> <OPTION 
+                          value=IR>Iran</OPTION> <OPTION value=IQ>Iraq</OPTION> 
+                          <OPTION value=IE|VAT>Ireland</OPTION> <OPTION 
+                          value=IL>Israel</OPTION> <OPTION 
+                          value=IT|VAT>Italy</OPTION> <OPTION 
+                          value=JM>Jamaica</OPTION> <OPTION 
+                          value=JP>Japan</OPTION> <OPTION 
+                          value=JO>Jordan</OPTION> <OPTION 
+                          value=KZ>Kazakhstan</OPTION> <OPTION 
+                          value=KE>Kenya</OPTION> <OPTION 
+                          value=KI>Kiribati</OPTION> <OPTION value=KP>Korea, 
+                          Dem. People's Rep. Of</OPTION> <OPTION value=KR>Korea, 
+                          Rep. Op</OPTION> <OPTION value=KW>Kuwait</OPTION> 
+                          <OPTION value=KG>Kyrgyzstan</OPTION> <OPTION 
+                          value=LA>Lao, People's Dem. Rep.</OPTION> <OPTION 
+                          value=LV>Latvia</OPTION> <OPTION 
+                          value=LB>Lebanon</OPTION> <OPTION 
+                          value=LS>Lesotho</OPTION> <OPTION 
+                          value=LR>Liberia</OPTION> <OPTION value=LY>Libian Arab 
+                          Jamahiriya</OPTION> <OPTION 
+                          value=LI>Liechtenstein</OPTION> <OPTION 
+                          value=LT>Lithuania</OPTION> <OPTION 
+                          value=LU|VAT>Luxembourg</OPTION> <OPTION 
+                          value=MO>Macau</OPTION> <OPTION value=MK>Macedonia, 
+                          Form. Yug. Rep. Of</OPTION> <OPTION 
+                          value=MG>Madagascar</OPTION> <OPTION 
+                          value=MW>Malawi</OPTION> <OPTION 
+                          value=MY>Malaysia</OPTION> <OPTION 
+                          value=MV>Maldives</OPTION> <OPTION 
+                          value=MT>Malta</OPTION> <OPTION 
+                          value=ML>Malti</OPTION> <OPTION value=MH>Marshall 
+                          Islands</OPTION> <OPTION value=MQ>Martinique</OPTION> 
+                          <OPTION value=MR>Mauritana</OPTION> <OPTION 
+                          value=MU>Mauritus</OPTION> <OPTION 
+                          value=YT>Mayotte</OPTION> <OPTION 
+                          value=MX>Mexico</OPTION> <OPTION 
+                          value=FM>Micronesia</OPTION> <OPTION 
+                          value=MD>Moldova</OPTION> <OPTION 
+                          value=MC>Monaco</OPTION> <OPTION 
+                          value=MN>Mongolia</OPTION> <OPTION 
+                          value=MS>Montserrat</OPTION> <OPTION 
+                          value=MA>Morocco</OPTION> <OPTION 
+                          value=MZ>Mozambique</OPTION> <OPTION 
+                          value=MM>Myanmar</OPTION> <OPTION 
+                          value=NA>Namibia</OPTION> <OPTION 
+                          value=NR>Nauru</OPTION> <OPTION 
+                          value=NP>Nepal</OPTION> <OPTION 
+                          value=NL|VAT>Netherlands</OPTION> <OPTION 
+                          value=AN>Netherlands Antilles</OPTION> <OPTION 
+                          value=NC>New Caledonia</OPTION> <OPTION value=NZ>New 
+                          Zealand</OPTION> <OPTION value=NI>Nicaragua</OPTION> 
+                          <OPTION value=NE>Niger</OPTION> <OPTION 
+                          value=NG>Nigeria</OPTION> <OPTION 
+                          value=NU>Niue</OPTION> <OPTION value=NF>Norfolk 
+                          Island</OPTION> <OPTION value=NO>Norway</OPTION> 
+                          <OPTION value=OM>Oman</OPTION> <OPTION 
+                          value=PK>Pakistan</OPTION> <OPTION 
+                          value=PW>Palau</OPTION> <OPTION 
+                          value=PA>Panama</OPTION> <OPTION value=PG>Papua New 
+                          Guinea</OPTION> <OPTION value=PY>Paraguay</OPTION> 
+                          <OPTION value=PE>Peru</OPTION> <OPTION 
+                          value=PH>Philippines</OPTION> <OPTION 
+                          value=PN>Pitcairn</OPTION> <OPTION 
+                          value=PL>Poland</OPTION> <OPTION 
+                          value=PT|VAT>Portugal</OPTION> <OPTION value=PR>Puerto 
+                          Rico</OPTION> <OPTION value=QA>Qatar</OPTION> <OPTION 
+                          value=RE>Reunion</OPTION> <OPTION 
+                          value=RO>Romania</OPTION> <OPTION value=RU>Russian 
+                          Federation</OPTION> <OPTION value=RW>Rwanda</OPTION> 
+                          <OPTION value=LC>Saint Lucia</OPTION> <OPTION 
+                          value=WS>Samoa</OPTION> <OPTION value=SM>San 
+                          Marino</OPTION> <OPTION value=SA>Saudi Arabia</OPTION> 
+                          <OPTION value=SN>Senegal</OPTION> <OPTION 
+                          value=SC>Seychelles</OPTION> <OPTION value=SL>Sierra 
+                          Leone</OPTION> <OPTION value=SG>Singapore</OPTION> 
+                          <OPTION value=SK>Slovakia</OPTION> <OPTION 
+                          value=SI>Slovenia</OPTION> <OPTION value=SB>Solomon 
+                          Islands</OPTION> <OPTION value=SO>Somalia</OPTION> 
+                          <OPTION value=ZA>South Africa</OPTION> <OPTION 
+                          value=ES|VAT>Spain</OPTION> <OPTION value=LK>Sri 
+                          Lanka</OPTION> <OPTION value=SD>Sudan</OPTION> <OPTION 
+                          value=SR>Suriname</OPTION> <OPTION 
+                          value=SZ>Swaziland</OPTION> <OPTION 
+                          value=SE|VAT>Sweden</OPTION> <OPTION 
+                          value=CH>Switzerland</OPTION> <OPTION 
+                          value=TW>Taiwan</OPTION> <OPTION 
+                          value=TH>Thailand</OPTION> <OPTION 
+                          value=TG>Togo</OPTION> <OPTION 
+                          value=TK>Tokelau</OPTION> <OPTION 
+                          value=TO>Tonga</OPTION> <OPTION value=TT>Trinidad 
+                          &amp; Tobago</OPTION> <OPTION 
+                          value=TN>Tunisia</OPTION> <OPTION 
+                          value=TR>Turkey</OPTION> <OPTION 
+                          value=TV>Tuvalu</OPTION> <OPTION 
+                          value=UG>Uganda</OPTION> <OPTION 
+                          value=UA>Ukraine</OPTION> <OPTION value=AE>United Arab 
+                          Emerates</OPTION> <OPTION value=GB>United 
+                          Kingdom</OPTION> <OPTION value=US>United 
+                          States</OPTION> <OPTION value=UY>Uruuguay</OPTION> 
+                          <OPTION value=UM>US Minor Outlying Isld.</OPTION> 
+                          <OPTION value=UZ>Uzbekistan</OPTION> <OPTION 
+                          value=VU>Vanuatu</OPTION> <OPTION value=VA>Vatican 
+                          City State</OPTION> <OPTION 
+                          value=VE>Venezuela</OPTION> <OPTION 
+                          value=VN>Vietnam</OPTION> <OPTION value=VG>Virgin 
+                          Islands (British)</OPTION> <OPTION value=VI>Virgin 
+                          Islands (US)</OPTION> <OPTION value=EH>Western 
+                          Sahara</OPTION> <OPTION value=YE>Yemen</OPTION> 
+                          <OPTION value=YU>Yugoslavia</OPTION> <OPTION 
+                          value=ZM>Zambia</OPTION> <OPTION 
+                          value=ZW>Zimbabwe</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Phone</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 
+                        name=phone> Including area &amp; country code</TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Email</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 
+                        name=email> </TD></TR>
+                    <TR>
+                      <TD class=table_top vAlign=top colSpan=4 
+height=15></TD></TR>
+                    <TR>
+                      <TD class=sub_title vAlign=top colSpan=4>Payment</TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Payment&nbsp;Method</SPAN></TD>
+                      <TD colSpan=3>
+                        <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD width="49%"><INPUT 
+                              onclick="ShowHideCardInput(); ShowHideVatInput();" 
+                              type=radio CHECKED value=cc name=payment_method> 
+                              <SPAN class=table>Credit/Debit 
+                              Card</SPAN>&nbsp;<BR><INPUT 
+                              onclick="ShowHideCardInput(); ShowHideVatInput();" 
+                              type=radio value=invoice name=payment_method> 
+                              <SPAN class=table>Cheque/Bank Transfer</SPAN></TD>
+                            <TD width="51%"><SPAN class=table><IMG 
+                              id=payment_method 
+                              onmouseover="PopUpHelp('payment_method',-70)" 
+                              onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                              height=13 
+                              src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                              width=13 border=0 
+                          name=payment_method></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right><B 
+                        class=table_top>&nbsp;Promotion&nbsp;Code</B></TD>
+                      <TD colSpan=3><INPUT class=FormFields name=promo> <IMG 
+                        id=promo onmouseover="PopUpHelp('promo')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=middle border=0 name=promo></TD></TR>
+                    <TR id=row_vatno>
+                      <TD vAlign=top align=right><B 
+                        class=table_top>&nbsp;VAT&nbsp;Number</B></TD>
+                      <TD colSpan=3><INPUT class=FormFields name=vatno> <IMG 
+                        id=vatno onmouseover="PopUpHelp('vatno')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=middle border=0 name=vatno></TD></TR>
+                    <TR>
+                      <TD vAlign=top colSpan=4 height=15></TD></TR>
+                    <TR id=row_card_details_0>
+                      <TD vAlign=top colSpan=4><B class=sub_title>Card Details 
+                        </B></TD></TR>
+                    <TR id=row_card_details_1>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Card&nbsp;Number</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=22 
+                        name=cardnumber> <IMG id=cardnumber 
+                        onmouseover="PopUpHelp('cardnumber')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=cardnumber> 
+</TD></TR>
+                    <TR id=row_card_details_2>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Expiry&nbsp;Date</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields name=cardmonth> 
+                          <OPTION value=01 selected>01</OPTION><OPTION 
+                          value=02>02</OPTION><OPTION 
+                          value=03>03</OPTION><OPTION 
+                          value=04>04</OPTION><OPTION 
+                          value=05>05</OPTION><OPTION 
+                          value=06>06</OPTION><OPTION 
+                          value=07>07</OPTION><OPTION 
+                          value=08>08</OPTION><OPTION 
+                          value=09>09</OPTION><OPTION 
+                          value=10>10</OPTION><OPTION 
+                          value=11>11</OPTION><OPTION 
+                        value=12>12</OPTION></SELECT> / <SELECT class=FormFields 
+                        name=cardyear> <OPTION value=2004 
+                          selected>2004</OPTION><OPTION 
+                          value=2005>2005</OPTION><OPTION 
+                          value=2006>2006</OPTION><OPTION 
+                          value=2007>2007</OPTION><OPTION 
+                          value=2008>2008</OPTION><OPTION 
+                          value=2009>2009</OPTION><OPTION 
+                          value=2010>2010</OPTION><OPTION 
+                          value=2011>2011</OPTION><OPTION 
+                          value=2012>2012</OPTION><OPTION 
+                          value=2013>2013</OPTION><OPTION 
+                          value=2014>2014</OPTION></SELECT> <IMG id=expiry 
+                        onmouseover="PopUpHelp('expiry')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=expiry> </TD></TR>
+                    <TR id=row_card_details_3>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Security&nbsp;Code</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=4 name=cvv> 
+                        <IMG id=cvv onmouseover="PopUpHelp('cvv',-200,65)" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=cvv> </TD></TR>
+                    <TR id=row_card_details_4>
+                      <TD vAlign=top align=right><SPAN 
+                        class=table_top>&nbsp;Issue&nbsp;Number</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields size=4 
+                        name=cardissue> <IMG id=issue 
+                        onmouseover="PopUpHelp('issue',-50,65)" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=issue> </TD></TR>
+                    <TR id=row_card_details_5>
+                      <TD vAlign=top align=right><SPAN 
+                        class=table_top>&nbsp;Begin&nbsp;Date</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields 
+                        name=cardbeginmonth> <OPTION value="" 
+                          selected></OPTION> <OPTION value=01>01</OPTION><OPTION 
+                          value=02>02</OPTION><OPTION 
+                          value=03>03</OPTION><OPTION 
+                          value=04>04</OPTION><OPTION 
+                          value=05>05</OPTION><OPTION 
+                          value=06>06</OPTION><OPTION 
+                          value=07>07</OPTION><OPTION 
+                          value=08>08</OPTION><OPTION 
+                          value=09>09</OPTION><OPTION 
+                          value=10>10</OPTION><OPTION 
+                          value=11>11</OPTION><OPTION 
+                        value=12>12</OPTION></SELECT> / <SELECT class=FormFields 
+                        name=cardbeginyear> <OPTION value="" 
+                          selected></OPTION> <OPTION 
+                          value=2004>2004</OPTION><OPTION 
+                          value=2003>2003</OPTION><OPTION 
+                          value=2002>2002</OPTION><OPTION 
+                          value=2001>2001</OPTION><OPTION 
+                          value=2000>2000</OPTION><OPTION 
+                          value=1999>1999</OPTION><OPTION 
+                          value=1998>1998</OPTION><OPTION 
+                          value=1997>1997</OPTION><OPTION 
+                          value=1996>1996</OPTION><OPTION 
+                          value=1995>1995</OPTION><OPTION 
+                          value=1994>1994</OPTION></SELECT> <IMG id=begin 
+                        onmouseover="PopUpHelp('begin')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 name=begin> </TD></TR>
+                    <TR id=row_card_details_6>
+                      <TD colSpan=4 height=15></TD></TR>
+                    <TR id=row_card_details_7>
+                      <TD vAlign=top colSpan=4><B class=sub_title>Card Owner 
+                        <IMG id=card_owner onmouseover="PopUpHelp('card_owner')" 
+                        onmouseout="MM_showHideLayers('helplayer','','hide')" 
+                        height=13 
+                        src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                        width=13 align=absMiddle border=0 
+                    name=card_owner></B></TD></TR>
+                    <TR id=row_card_details_8>
+                      <TD vAlign=top colSpan=4><INPUT id=show_cardholder 
+                        onclick="ShowHideCardHolder(); ShowHideVatInput();" 
+                        type=checkbox CHECKED value=no name=show_cardholder> 
+                        Card Owner same as Account Owner</TD></TR>
+                    <TR id=row_card_holder_0>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Forename</SPAN></TD>
+                      <TD vAlign=top><INPUT class=FormFields id=bforename 
+                        size=15 name=bforename> </TD>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Surname</SPAN></TD>
+                      <TD vAlign=top><INPUT class=FormFields id=bsurname 
+                        size=12 name=bsurname> </TD></TR>
+                    <TR id=row_card_holder_1>
+                      <TD vAlign=top align=right><SPAN 
+                        class=table_top>Company</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=bcompany 
+                        size=22 name=bcompany> </TD></TR>
+                    <TR id=row_card_holder_2>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Address</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=baddress 
+                        size=22 name=baddress> </TD></TR>
+                    <TR id=row_card_holder_3>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;City</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=bcity size=22 
+                        name=bcity> </TD></TR>
+                    <TR id=row_card_holder_4>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;County</SPAN></TD>
+                      <TD><INPUT class=FormFields id=bcounty size=15 
+                        name=bcounty> </TD>
+                      <TD vAlign=top align=right><SPAN class=required 
+                        id=zip_required></SPAN><SPAN 
+                        class=table_top>&nbsp;Post&nbsp;Code</SPAN></TD>
+                      <TD vAlign=top><INPUT class=FormFields id=bzip size=8 
+                        name=bzip> </TD></TR>
+                    <TR id=row_card_holder_5>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Country</SPAN></TD>
+                      <TD colSpan=3><SELECT class=FormFields id=bcountry 
+                        onchange=ShowHideVatInput() name=bcountry> <OPTION 
+                          value=GB selected>United Kingdom</OPTION> <OPTION 
+                          value=US>United States</OPTION> <OPTION 
+                          value=IE|VAT>Ireland</OPTION> <OPTION 
+                          value="">--------------------</OPTION><OPTION 
+                          value=AF>Afganistan</OPTION> <OPTION 
+                          value=AL>Albania</OPTION> <OPTION 
+                          value=DZ>Algeria</OPTION> <OPTION value=AS>American 
+                          Samoa</OPTION> <OPTION value=AD>Andorra</OPTION> 
+                          <OPTION value=AO>Angola</OPTION> <OPTION 
+                          value=AI>Anguilla</OPTION> <OPTION 
+                          value=AQ>Antarctica</OPTION> <OPTION value=AG>Antigua 
+                          &amp; Barbuda</OPTION> <OPTION 
+                          value=AR>Argentina</OPTION> <OPTION 
+                          value=AM>Armenia</OPTION> <OPTION 
+                          value=AW>Aruba</OPTION> <OPTION 
+                          value=AU>Australia</OPTION> <OPTION 
+                          value=AT|VAT>Austria</OPTION> <OPTION 
+                          value=AZ>Azerbaijan</OPTION> <OPTION 
+                          value=BS>Bahamas</OPTION> <OPTION 
+                          value=BH>Bahrain</OPTION> <OPTION 
+                          value=BD>Bangladesh</OPTION> <OPTION 
+                          value=BB>Barbados</OPTION> <OPTION 
+                          value=BY>Belarus</OPTION> <OPTION 
+                          value=BE|VAT>Belgium</OPTION> <OPTION 
+                          value=BZ>Belize</OPTION> <OPTION 
+                          value=BJ>Benin</OPTION> <OPTION 
+                          value=BM>Bermuda</OPTION> <OPTION 
+                          value=BT>Bhuyan</OPTION> <OPTION 
+                          value=BO>Bolivia</OPTION> <OPTION value=BA>Bosnia 
+                          &amp; Herzegowina</OPTION> <OPTION 
+                          value=BW>Botswana</OPTION> <OPTION value=BV>Bouvet 
+                          Island</OPTION> <OPTION value=BR>Brazil</OPTION> 
+                          <OPTION value=BG>Bulgaria</OPTION> <OPTION 
+                          value=BF>Burkina Faso</OPTION> <OPTION 
+                          value=BI>Burundi</OPTION> <OPTION 
+                          value=KH>Cambodia</OPTION> <OPTION 
+                          value=CM>Cameroon</OPTION> <OPTION 
+                          value=CA>Canada</OPTION> <OPTION value=CV>Cape 
+                          Verde</OPTION> <OPTION value=KY>Cayman 
+                          Islands</OPTION> <OPTION value=CF>Central African 
+                          Republic</OPTION> <OPTION value=TD>Chad</OPTION> 
+                          <OPTION value=JG|VAT>Channel Islands (U.K.)</OPTION> 
+                          <OPTION value=CL>Chile</OPTION> <OPTION 
+                          value=CN>China</OPTION> <OPTION value=CX>Christmas 
+                          Island</OPTION> <OPTION value=CC>Cocos 
+                          Islands</OPTION> <OPTION value=CO>Colombia</OPTION> 
+                          <OPTION value=KM>Comoros</OPTION> <OPTION 
+                          value=CG>Congo</OPTION> <OPTION value=CD>Congo, Dem. 
+                          Rep. Of</OPTION> <OPTION value=CK>Cook 
+                          Islands</OPTION> <OPTION value=CR>Costa Rica</OPTION> 
+                          <OPTION value=CI>Cote D'Ivoire</OPTION> <OPTION 
+                          value=HR>Croatia</OPTION> <OPTION 
+                          value=CU>Cuba</OPTION> <OPTION 
+                          value=CY>Cyprus</OPTION> <OPTION value=CZ>Czech 
+                          Republic</OPTION> <OPTION 
+                          value=DK|VAT>Denmark</OPTION> <OPTION 
+                          value=DJ>Djibouti</OPTION> <OPTION 
+                          value=DM>Dominica</OPTION> <OPTION value=DO>Dominican 
+                          Republic</OPTION> <OPTION value=TP>East Timor</OPTION> 
+                          <OPTION value=EG>Egypt</OPTION> <OPTION value=SV>El 
+                          Salvador</OPTION> <OPTION value=EC>Equador</OPTION> 
+                          <OPTION value=GQ>Equatorial Guinea</OPTION> <OPTION 
+                          value=ER>Eritrea</OPTION> <OPTION 
+                          value=EE>Estonia</OPTION> <OPTION 
+                          value=ET>Ethiopia</OPTION> <OPTION value=FK>Falkland 
+                          Islands</OPTION> <OPTION value=FO>Faroe 
+                          Islands</OPTION> <OPTION value=FJ>Fiji</OPTION> 
+                          <OPTION value=FI|VAT>Finland</OPTION> <OPTION 
+                          value=FR|VAT>France</OPTION> <OPTION value=FX>France, 
+                          Met.</OPTION> <OPTION value=GF>French Guiana</OPTION> 
+                          <OPTION value=PF>French Polynesia</OPTION> <OPTION 
+                          value=TF>French South. Ter.</OPTION> <OPTION 
+                          value=GA>Gabon</OPTION> <OPTION 
+                          value=GM>Gambia</OPTION> <OPTION 
+                          value=GE>Georgia</OPTION> <OPTION 
+                          value=DE|VAT>Germany</OPTION> <OPTION 
+                          value=GH>Ghana</OPTION> <OPTION 
+                          value=GI>Gibraltar</OPTION> <OPTION 
+                          value=GR>Greece</OPTION> <OPTION 
+                          value=GL>Greenland</OPTION> <OPTION 
+                          value=GD>Grenada</OPTION> <OPTION 
+                          value=GP>Guadeloupe</OPTION> <OPTION 
+                          value=GU>Guam</OPTION> <OPTION 
+                          value=GT>Guatemala</OPTION> <OPTION 
+                          value=GN>Guinea</OPTION> <OPTION 
+                          value=GW>Guinea-Bissau</OPTION> <OPTION 
+                          value=GY>Guyana</OPTION> <OPTION 
+                          value=HT>Hati</OPTION> <OPTION 
+                          value=HN>Hondras</OPTION> <OPTION value=HK>Hong 
+                          Kong</OPTION> <OPTION value=HU>Hungary</OPTION> 
+                          <OPTION value=IS>Iceland</OPTION> <OPTION 
+                          value=IN>India</OPTION> <OPTION 
+                          value=ID>Indonesia</OPTION> <OPTION 
+                          value=IR>Iran</OPTION> <OPTION value=IQ>Iraq</OPTION> 
+                          <OPTION value=IE|VAT>Ireland</OPTION> <OPTION 
+                          value=IL>Israel</OPTION> <OPTION 
+                          value=IT|VAT>Italy</OPTION> <OPTION 
+                          value=JM>Jamaica</OPTION> <OPTION 
+                          value=JP>Japan</OPTION> <OPTION 
+                          value=JO>Jordan</OPTION> <OPTION 
+                          value=KZ>Kazakhstan</OPTION> <OPTION 
+                          value=KE>Kenya</OPTION> <OPTION 
+                          value=KI>Kiribati</OPTION> <OPTION value=KP>Korea, 
+                          Dem. People's Rep. Of</OPTION> <OPTION value=KR>Korea, 
+                          Rep. Op</OPTION> <OPTION value=KW>Kuwait</OPTION> 
+                          <OPTION value=KG>Kyrgyzstan</OPTION> <OPTION 
+                          value=LA>Lao, People's Dem. Rep.</OPTION> <OPTION 
+                          value=LV>Latvia</OPTION> <OPTION 
+                          value=LB>Lebanon</OPTION> <OPTION 
+                          value=LS>Lesotho</OPTION> <OPTION 
+                          value=LR>Liberia</OPTION> <OPTION value=LY>Libian Arab 
+                          Jamahiriya</OPTION> <OPTION 
+                          value=LI>Liechtenstein</OPTION> <OPTION 
+                          value=LT>Lithuania</OPTION> <OPTION 
+                          value=LU|VAT>Luxembourg</OPTION> <OPTION 
+                          value=MO>Macau</OPTION> <OPTION value=MK>Macedonia, 
+                          Form. Yug. Rep. Of</OPTION> <OPTION 
+                          value=MG>Madagascar</OPTION> <OPTION 
+                          value=MW>Malawi</OPTION> <OPTION 
+                          value=MY>Malaysia</OPTION> <OPTION 
+                          value=MV>Maldives</OPTION> <OPTION 
+                          value=MT>Malta</OPTION> <OPTION 
+                          value=ML>Malti</OPTION> <OPTION value=MH>Marshall 
+                          Islands</OPTION> <OPTION value=MQ>Martinique</OPTION> 
+                          <OPTION value=MR>Mauritana</OPTION> <OPTION 
+                          value=MU>Mauritus</OPTION> <OPTION 
+                          value=YT>Mayotte</OPTION> <OPTION 
+                          value=MX>Mexico</OPTION> <OPTION 
+                          value=FM>Micronesia</OPTION> <OPTION 
+                          value=MD>Moldova</OPTION> <OPTION 
+                          value=MC>Monaco</OPTION> <OPTION 
+                          value=MN>Mongolia</OPTION> <OPTION 
+                          value=MS>Montserrat</OPTION> <OPTION 
+                          value=MA>Morocco</OPTION> <OPTION 
+                          value=MZ>Mozambique</OPTION> <OPTION 
+                          value=MM>Myanmar</OPTION> <OPTION 
+                          value=NA>Namibia</OPTION> <OPTION 
+                          value=NR>Nauru</OPTION> <OPTION 
+                          value=NP>Nepal</OPTION> <OPTION 
+                          value=NL|VAT>Netherlands</OPTION> <OPTION 
+                          value=AN>Netherlands Antilles</OPTION> <OPTION 
+                          value=NC>New Caledonia</OPTION> <OPTION value=NZ>New 
+                          Zealand</OPTION> <OPTION value=NI>Nicaragua</OPTION> 
+                          <OPTION value=NE>Niger</OPTION> <OPTION 
+                          value=NG>Nigeria</OPTION> <OPTION 
+                          value=NU>Niue</OPTION> <OPTION value=NF>Norfolk 
+                          Island</OPTION> <OPTION value=NO>Norway</OPTION> 
+                          <OPTION value=OM>Oman</OPTION> <OPTION 
+                          value=PK>Pakistan</OPTION> <OPTION 
+                          value=PW>Palau</OPTION> <OPTION 
+                          value=PA>Panama</OPTION> <OPTION value=PG>Papua New 
+                          Guinea</OPTION> <OPTION value=PY>Paraguay</OPTION> 
+                          <OPTION value=PE>Peru</OPTION> <OPTION 
+                          value=PH>Philippines</OPTION> <OPTION 
+                          value=PN>Pitcairn</OPTION> <OPTION 
+                          value=PL>Poland</OPTION> <OPTION 
+                          value=PT|VAT>Portugal</OPTION> <OPTION value=PR>Puerto 
+                          Rico</OPTION> <OPTION value=QA>Qatar</OPTION> <OPTION 
+                          value=RE>Reunion</OPTION> <OPTION 
+                          value=RO>Romania</OPTION> <OPTION value=RU>Russian 
+                          Federation</OPTION> <OPTION value=RW>Rwanda</OPTION> 
+                          <OPTION value=LC>Saint Lucia</OPTION> <OPTION 
+                          value=WS>Samoa</OPTION> <OPTION value=SM>San 
+                          Marino</OPTION> <OPTION value=SA>Saudi Arabia</OPTION> 
+                          <OPTION value=SN>Senegal</OPTION> <OPTION 
+                          value=SC>Seychelles</OPTION> <OPTION value=SL>Sierra 
+                          Leone</OPTION> <OPTION value=SG>Singapore</OPTION> 
+                          <OPTION value=SK>Slovakia</OPTION> <OPTION 
+                          value=SI>Slovenia</OPTION> <OPTION value=SB>Solomon 
+                          Islands</OPTION> <OPTION value=SO>Somalia</OPTION> 
+                          <OPTION value=ZA>South Africa</OPTION> <OPTION 
+                          value=ES|VAT>Spain</OPTION> <OPTION value=LK>Sri 
+                          Lanka</OPTION> <OPTION value=SD>Sudan</OPTION> <OPTION 
+                          value=SR>Suriname</OPTION> <OPTION 
+                          value=SZ>Swaziland</OPTION> <OPTION 
+                          value=SE|VAT>Sweden</OPTION> <OPTION 
+                          value=CH>Switzerland</OPTION> <OPTION 
+                          value=TW>Taiwan</OPTION> <OPTION 
+                          value=TH>Thailand</OPTION> <OPTION 
+                          value=TG>Togo</OPTION> <OPTION 
+                          value=TK>Tokelau</OPTION> <OPTION 
+                          value=TO>Tonga</OPTION> <OPTION value=TT>Trinidad 
+                          &amp; Tobago</OPTION> <OPTION 
+                          value=TN>Tunisia</OPTION> <OPTION 
+                          value=TR>Turkey</OPTION> <OPTION 
+                          value=TV>Tuvalu</OPTION> <OPTION 
+                          value=UG>Uganda</OPTION> <OPTION 
+                          value=UA>Ukraine</OPTION> <OPTION value=AE>United Arab 
+                          Emerates</OPTION> <OPTION value=GB>United 
+                          Kingdom</OPTION> <OPTION value=US>United 
+                          States</OPTION> <OPTION value=UY>Uruuguay</OPTION> 
+                          <OPTION value=UM>US Minor Outlying Isld.</OPTION> 
+                          <OPTION value=UZ>Uzbekistan</OPTION> <OPTION 
+                          value=VU>Vanuatu</OPTION> <OPTION value=VA>Vatican 
+                          City State</OPTION> <OPTION 
+                          value=VE>Venezuela</OPTION> <OPTION 
+                          value=VN>Vietnam</OPTION> <OPTION value=VG>Virgin 
+                          Islands (British)</OPTION> <OPTION value=VI>Virgin 
+                          Islands (US)</OPTION> <OPTION value=EH>Western 
+                          Sahara</OPTION> <OPTION value=YE>Yemen</OPTION> 
+                          <OPTION value=YU>Yugoslavia</OPTION> <OPTION 
+                          value=ZM>Zambia</OPTION> <OPTION 
+                          value=ZW>Zimbabwe</OPTION></SELECT> </TD></TR>
+                    <TR id=row_card_holder_6>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Phone</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=bphone size=22 
+                        name=bphone> Including area &amp; country code </TD></TR>
+                    <TR id=row_card_holder_7>
+                      <TD vAlign=top align=right><SPAN 
+                        class=required>*</SPAN><SPAN 
+                        class=table_top>&nbsp;Email</SPAN></TD>
+                      <TD colSpan=3><INPUT class=FormFields id=bemail size=22 
+                        name=bemail> </TD></TR>
+                    <TR>
+                      <TD vAlign=top align=right colSpan=4 height=15></TD></TR>
+                    <TR>
+                      <TD vAlign=top align=left><INPUT class=FormButton type=submit value="Preview Order" name=Submit></TD>
+                      <TD vAlign=top align=right colSpan=3><INPUT type=hidden 
+                        value=2 name=stage><INPUT type=hidden 
+                        name=comments><INPUT type=hidden 
+                    name=referral></TD></TR></TBODY></TABLE></FORM>
+                  <P>Complete the order form above and click 'Preview Order' to 
+                  proceed, you will have opportunity to verify your entries and 
+                  the total amount before you order is processed and you are 
+                  billed. 
+                  <P>Click the <B class=table_top><IMG height=13 
+                  src="Web Site Hosting Registration - Donhost UK_files/help_question_mark.gif" 
+                  width=13 border=0></B> icons for help completing the form or 
+                  call our sales office on +44 (0)845 226 5566 for further 
+                  assistance. 
+            <BR><!-- InstanceEndEditable --></P></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR>
+        <TR>
+          <TD>
+            <DIV align=center><A class=menulinks 
+            href="http://www.donhost.co.uk/index.html">Home</A> | <A 
+            class=menulinks 
+            href="https://www.donhost.co.uk/order/order.asp"></A><A 
+            class=menulinks 
+            href="http://www.donhost.co.uk/products/index.html">Products</A> | 
+            <A class=menulinks 
+            href="https://www.donhost.co.uk/order/order.asp">Sign Up</A> | <A 
+            class=menulinks 
+            href="http://www.donhost.co.uk/company/index.html">Company</A> | <A 
+            class=menulinks 
+            href="http://www.donhost.co.uk/support/index.pl">Support</A></DIV></TD></TR>
+        <TR>
+          <TD>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+  <TR bgColor=#000066>
+    <TD bgColor=#000066 height=20>
+      <TABLE class=whitetext cellSpacing=0 cellPadding=0 width="99%" 
+      align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=TemplateLightText><!-- InstanceBeginEditable name="FooterContact" -->Tel: 
+            0845 226 5566 | Email: <A class=TemplateLightText 
+            href="mailto:sales@donhost.co.uk">sales@donhost.co.uk</A><!-- InstanceEndEditable --></TD>
+          <TD>
+            <DIV class=TemplateLightText align=right>© Donhost Limited 
+            2000-2004</DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- InstanceEnd --></BODY></HTML>

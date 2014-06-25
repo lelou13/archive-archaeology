@@ -1,0 +1,1901 @@
+<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>VKP Posters</title>
+
+
+
+	<link rel="stylesheet" href="style_poster.cfm-id=0" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/style_poster.cfm?id=0" type="text/css">
+
+
+<script language="JavaScript" type="text/javascript">
+	// globals
+	var dataEntryWindow;
+	//
+	function closeWin() {
+		window.opener.location.reload(true);
+		window.close();
+	}
+	
+	function confirmDeleteBox(boxname, bid, posterid, btype){
+		var doDelete = false;
+		doDelete = confirm("Are you sure you want to delete the box '"+boxname+"'?");
+		if (doDelete) {
+			document.location = 'act_deletebox.cfm?id='+bid+'&posterid='+posterid+'&type='+btype;
+			}
+	}
+	//
+	function popUpEditor(cntlName, id, type){
+		var cntlContextName = getLeft(cntlName, '_');
+		dataEntryWindow = window.open('dsp_'+cntlContextName+'_Editor.cfm?id='+id+'&type='+type, cntlContextName+'Editor','width=500,height=400,scrollbars,resizable');
+	}
+	
+	function popUpReply(owner){
+		dataEntryWindow = window.open('dsp_feedback.cfm?owner='+owner, 'Reply_Form', 'width=450,height=460,resizable');
+		}
+	
+	// pops up a 'more info' window
+	//function popUpInfo(id){
+		//dataEntryWindow = window.open('dsp_infobox.cfm?id='+id, 'Info','width=300,height=200,scrollbars,resizable');
+	//}
+	function popUpInfo(id){
+		var winParams;
+		var popUpWidth = 300;
+		var popUpHeight = 200;
+		if (navigator.appName == "Netscape"){
+			// make sure the popup window doesn't extend off the screen.
+			var popUpX = Math.min(scrnX, screen.availWidth - popUpWidth);
+			var popUpY = Math.min(scrnY, screen.availHeight - popUpHeight);
+			winParams = 'screenX=' +popUpX+ ',screenY=' +popUpY+ ',width=' +popUpWidth+ ',height=' +popUpHeight+ ',scrollbars,resizable';
+		} else {
+			if (window.event){
+				// make sure the popup window doesn't extend off the screen.
+				var popUpX = Math.min(window.event.screenX, screen.availWidth - popUpWidth);
+				var popUpY = Math.min(window.event.screenY, screen.availHeight - popUpHeight);
+				winParams = 'left=' +popUpX+ ',top=' +popUpY+ ',width=' +popUpWidth+ ',height=' +popUpHeight+ ',scrollbars,resizable';
+			}
+		}
+		dataEntryWindow = window.open('dsp_infobox.cfm?id='+id, 'Info', winParams);
+	}
+	// need this to make window positioning work on Netscape.
+	var scrnX;
+	var scrnY;
+	function GetClickInfo(evt) {
+		scrnX = evt.screenX;
+		scrnY = evt.screenY;
+		routeEvent(evt);
+	}
+	
+	// returns the characters in str leading up to the delimiter.
+	function getLeft(str, delim){
+		var delimPos = str.indexOf(delim);
+		var leftStr = str.substring(0, delimPos);
+		return leftStr;
+	}
+	// null function to give to <a> tag hrefs so they don't do anything.
+	function dontNavigate(){
+	}
+	
+	// get click info on Netscape browsers.
+	if (navigator.appName == "Netscape"){
+		// for  4.x browsers.
+		document.captureEvents(Event.CLICK);
+		document.onclick=GetClickInfo;
+		// for 6.x browsers.
+		document.addEventListener("click", GetClickInfo, true);
+	}
+	//-->
+</script>
+
+
+
+<link rel="stylesheet" href="style1.css" tppabs="http://cfdev.georgetown.edu/cndls/vkp/profiles/style1.css" type="text/css">
+</HEAD>
+<BODY BGCOLOR=#FFFFFF leftmargin="0" topmargin="0" onLoad="MM_preloadImages('http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/images/mainNav_people-over.gif','../Templates/VKP%20beta/images/mainNav_themes-over.gif','../Templates/VKP%20beta/images/mainNav_home-over.gif','../Templates/VKP%20beta/images/mainNav_resources-over.gif','../Templates/VKP%20beta/images/subNav_overviewLinks-over.gif','../Templates/VKP%20beta/images/subNav_aboutInvestigators-o.gif','../Templates/VKP%20beta/images/subNav_aboutCampuses-over.gif','../Templates/VKP%20beta/images/subNav_executiveSummary-ove.gif')">
+
+
+
+  <!--Begin Content Table -->
+  
+
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+
+<!--Begin Top Collage and Secondary Navigation Table -->
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td> <img src="subPage_top_01.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top_01.jpg" width="654" height="63" alt=""></td>
+    <td> <a href="#" onMouseOver="MM_swapImage('subPage_topNav_search','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_search-over.jpg',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a> <a href="#" onMouseOver="MM_swapImage('subPage_topNav_workspace','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_workspace-ov.jpg',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a> <a href="#" onMouseOver="MM_swapImage('subPage_topNav_siteMap','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_siteMap-over.jpg',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a> <a href="#" onMouseOver="MM_swapImage('subPage_topNav_contact','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_contact-over.jpg',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a> 
+      <table width="81" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="subPage_topNav_slice1.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_slice1.jpg" width="81" height="4"></td>
+        </tr>
+        <tr> 
+          <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/search.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/search.htm'" tppabs="http://crossroads.georgetown.edu/vkp/search.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_search-over.jpg',1)"><img src="subPage_topNav_search.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_search.jpg" width="81" height="14" border="0" name="Image2" alt="Search"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/login.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/login.htm'" tppabs="http://crossroads.georgetown.edu/vkp/login.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image3','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_workspace-ov.jpg',1)"><img src="subPage_topNav_workspace.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_workspace.jpg" width="81" height="14" border="0" name="Image3" alt="Project Workspace"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/site_map.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/site_map.htm'" tppabs="http://crossroads.georgetown.edu/vkp/site_map.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_siteMap-over.jpg',1)"><img src="subPage_topNav_siteMap.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_siteMap.jpg" width="81" height="12" border="0" name="Image4" alt="Site Map"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/contact_us.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/contact_us.htm'" tppabs="http://crossroads.georgetown.edu/vkp/contact_us.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_contact-over.jpg',1)"><img src="subPage_topNav_contact.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_contact.jpg" width="81" height="13" border="0" name="Image5" alt="Contact Us"></a></td>
+        </tr>
+        <tr> 
+          <td><img src="subPage_topNav_slice2.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_slice2.jpg" width="81" height="6"></td>
+        </tr>
+      </table>
+      <a href="#" onMouseOver="MM_swapImage('subPage_topNav_contact','','http://cfdev.georgetown.edu/cndls/vkp/images/subPage_topNav_contact-over.jpg',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a></td>
+    <td> <img src="subPage_top__03.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top__03.jpg" width="15" height="63" alt=""></td>
+  </tr>
+  <tr> 
+    <td> <img src="subPage_top_07.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top_07.jpg" width="654" height="22" alt=""></td>
+    <td> <img src="subPage_top__08.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top__08.jpg" width="81" height="22" alt=""></td>
+    <td> <img src="subPage_top_09.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top_09.jpg" width="15" height="22" alt=""></td>
+  </tr>
+</table>
+<!--End Top Collage and Secondary Navigation Table -->
+<!--Begin Main Navigation Table -->
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td> 
+      <table width="483" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/'" tppabs="http://crossroads.georgetown.edu/vkp/" onMouseOver="MM_swapImage('Image1','','http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_home-over.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="home_mainNav_home.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_home.gif" alt="Home" name="Image1" width="53" height="20" border="0" id="Image1"></a></td>
+          <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/about/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/about/'" tppabs="http://crossroads.georgetown.edu/vkp/about/" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('home_mainNav_about','','http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_about-over.gif',1)"> 
+            <img name="home_mainNav_about" src="home_mainNav_about.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_about.gif" width="111" height="20" border="0" alt="About the Project"></a></td>
+          <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/themes/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/themes/'" tppabs="http://crossroads.georgetown.edu/vkp/themes/" onMouseOver="MM_swapImage('home_mainNav_themes','','http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_themes-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+            <img name="home_mainNav_themes" src="home_mainNav_themes.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_themes.gif" width="119" height="20" border="0" alt="Themes and Issues"></a></td>
+          <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/people/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/people/'" tppabs="http://crossroads.georgetown.edu/vkp/people/" onMouseOver="MM_swapImage('home_mainNav_people','','http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_people-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+            <img name="home_mainNav_people" src="javascript:if(confirm('http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_people-over.gif  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_people-over.gif'" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_people-over.gif" width="125" height="20" border="0" alt="People and Projects"></a></td>
+          <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/resources/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/resources/'" tppabs="http://crossroads.georgetown.edu/vkp/resources/" onMouseOver="MM_swapImage('home_mainNav_resources','','http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_resources-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+            <img name="home_mainNav_resources" src="home_mainNav_resources.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/home_mainNav_resources.gif" width="75" height="20" border="0" alt="Resources"></a></td>
+        </tr>
+      </table>
+    </td>
+    <td> <img src="subPage_top2_mainNav_slice.jpg" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/subPage_top2_mainNav_slice.jpg" width="267" height="20" alt=""></td>
+  </tr>
+</table>
+
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr valign="top"> 
+    <td> <a href="javascript:if(confirm('http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_campuses.cfm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_campuses.cfm'" tppabs="http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_campuses.cfm" onMouseOver="MM_swapImage('subNav_about_nav1','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav1-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+      <img name="subNav_about_nav1" src="subNav_people_nav1.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav1.gif" width="76" height="21" border="0" alt="Campuses"></a></td>
+    <td> <a href="javascript:if(confirm('http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm'" tppabs="http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm" onMouseOver="MM_swapImage('subNav_about_nav2','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav2-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a></td>
+    <td><a href="dsp_posterlist.cfm.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_posterlist.cfm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Posters','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav6-over.gif',1)">
+		<img src="subNav_people_nav6.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav6.gif" alt="Posters" name="Posters" width="61" height="21" border="0"></a></td>
+    <td> <a href="javascript:if(confirm('http://cfdev.georgetown.edu/training/levined2/vkp/posters/randd.htm  \n\nThis file was not retrieved by Teleport Pro, because the server reports that this file cannot be found.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/training/levined2/vkp/posters/randd.htm'" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/randd.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('subNav_about_nav3','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav3-over.gif',1)"> 
+      </a><a href="javascript:if(confirm('http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm'" tppabs="http://cfdev.georgetown.edu/cndls/vkp/profiles/Public/dsp_list.cfm" onMouseOver="MM_swapImage('subNav_about_nav2','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav2-over.gif',1)" onMouseOut="MM_swapImgRestore()"><img name="subNav_about_nav2" src="subNav_people_nav2.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav2.gif" width="89" height="21" border="0" alt="Researchers"></a></td>
+	 <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/people/staff.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/people/staff.htm'" tppabs="http://crossroads.georgetown.edu/vkp/people/staff.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav5-over.gif',1)">
+	  <img src="subNav_people_nav5.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav5.gif" width="49" height="21" border="0" alt="Staff" name="Image6"></a></td>
+    <td> <a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/newsletter  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/newsletter'" tppabs="http://crossroads.georgetown.edu/vkp/newsletter" onMouseOver="MM_swapImage('subNav_about_nav4','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav4-over.gif',1)" onMouseOut="MM_swapImgRestore()"> 
+      </a><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/people/randd.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/people/randd.htm'" tppabs="http://crossroads.georgetown.edu/vkp/people/randd.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('subNav_about_nav3','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav3-over.gif',1)">
+	  <img name="subNav_about_nav3" src="subNav_people_nav3.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav3.gif" width="169" height="21" border="0" alt="Research and Design Team"></a></td>
+    <td><a href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/newsletter  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/newsletter'" tppabs="http://crossroads.georgetown.edu/vkp/newsletter" onMouseOver="MM_swapImage('subNav_about_nav4','','http://crossroads.georgetown.edu/vkp/images/subNav_people_nav4-over.gif',1)" onMouseOut="MM_swapImgRestore()">
+	<img name="subNav_about_nav4" src="subNav_people_nav4.gif" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_nav4.gif" width="86" height="21" border="0" alt="Newsletter"></a></td>
+	<td><img src="subNav_people_collageSlice.jpg" tppabs="http://crossroads.georgetown.edu/vkp/images/subNav_people_collageSlice.jpg" width="220" height="21"></td>
+  </tr>
+</table>
+
+<!--End Sub Navigation Table -->
+
+
+
+<TABLE WIDTH=750 BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+  <TR> 
+    <TD width="35"> <IMG SRC="spacer.gif" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/images/spacer.gif" WIDTH=35 HEIGHT=37></TD>
+    <TD background="profileheader.jpg" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/profileheader.jpg" width="715" nowrap> 
+      		
+		
+	
+		<font face="Arial, Helvetica, sans-serif" color="FF9900" size="+1">&nbsp;&nbsp;&nbsp;Participant Posters</font></b></TD>
+	
+   
+  </TR>
+  <TR> 
+    <TD valign="top" colspan="4"><img src="spacer.gif" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/images/spacer.gif" height="10"></TD>
+  </TR>
+  <TR> 
+   
+    <TD colspan="2" valign="top"> 
+    
+		<table width="600" align="center">
+			<tr>
+				<td align="center" colspan="3">
+					<h2>Participant Posters</h2>
+					<span class="p-text">The following 'virtual posters' were created by VKP participants.  Click on a poster title to view that poster.
+					Click on any column heading to sort posters by that column.</span>
+					
+				</td>
+			</tr>
+		</table>
+		
+		<table width="600" align="center" cellspacing="0" cellpadding="2" border="0" bgcolor="#808080">
+			<tr>
+				<td align="center" width="160">
+					<b><a href="dsp_posterlist.cfm-sort=lastname.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_posterlist.cfm?sort=lastname"><span style="color: #FFFFFF">Author</span></a></b>
+				</td>
+				<td align="center" width="160">
+					<b><a href="dsp_posterlist.cfm-sort=discipline.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_posterlist.cfm?sort=discipline"><span style="color: #FFFFFF">Discipline</span></a></b>
+				</td>
+				<td align="center" width="280">
+					<b><a href="dsp_posterlist.cfm-sort=name.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_posterlist.cfm?sort=name"><span style="color: #FFFFFF">Institution</span></a></b>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table width="100%" align="center" bgcolor="#FFFFFF" cellspacing="0" cellpadding="5" border="0">
+						
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Lynne&nbsp;M.&nbsp;Adrian</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;University of Alabama&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=103.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=103">The Impact of Technology on Student Discussion and Learning</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Frank&nbsp;Ambrosio</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Philosophy&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Georgetown University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=154.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=154">    Dante and  the Journey to Freedom</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Randy&nbsp;Bass</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;American literature; American Studies; Pedagogy and Learning in the Humanities&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Georgetown University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=3.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=3">"Reading the US Cultural Past": Designing a Course for "Flexible Performance"</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Paula&nbsp;S.&nbsp;Berggren</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English and world literature,with an emphasis on Renaisssance Drama. &nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;City University of New York, The Graduate Center&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=114.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=114">Incremental Learning:  The Arts in New York City</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Aaron&nbsp;J.&nbsp;Cohen</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;California State University -- Sacramento&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=80.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=80">Can Computer Bulletin Boards Replace Traditional Class Meetings?</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Jan&nbsp;Connal</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Educational Psychology&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Cerritos Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=123.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=123">Intellectual Development and the Acquisition of Analytical Skills</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Rafael&nbsp;Corbalan</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Modern Languages&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Borough of Manhattan Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=94.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=94">New Technologies and the Teaching of a Foreign language</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Michael&nbsp;T&nbsp;Coventry</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History/American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=15.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=15">Visible Knowledge Project</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Melinda&nbsp;Luisa&nbsp;de Jesús</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Asian American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Independent Investigators University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=111.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=111">Using New Media Technology in the Asian Pacific American Studies Classroom</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Gloria&nbsp;Harper&nbsp;Dickinson</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Africana Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Independent Investigators University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=125.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=125">Project Planning Template</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Jeffrey&nbsp;A.&nbsp;Dym</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;California State University -- Sacramento&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=127.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=127">The Effectiveness of Weekly Online Computer Quizzes in Helping Students Learn Content</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Marshall&nbsp;C.&nbsp;Eakin</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Vanderbilt University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=85.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=85">Learning to "Do History"</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Peter&nbsp;Felten</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Vanderbilt University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=135.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=135">Reading historical sources</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Leona&nbsp;Fisher</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English/Women's Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Georgetown University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=119.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=119">Literature and Writing Workshop: Censorship</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Edward&nbsp;J.&nbsp;Gallagher</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Independent Investigators University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=229.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=229">VKP Research Project</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Alice&nbsp;Gambrell</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;University of Southern California&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=116.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=116">Multiple Media for Cultural Analysis</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Gail&nbsp;Green-Anderson</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;LaGuardia Community College, CUNY&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=152.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=152">Developing first-person writing  through  the electronic Discussion Board</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Lawrence&nbsp;Francis&nbsp;Hanley</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English/American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;City University of New York, The Graduate Center&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=143.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=143">Representing the City</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Kimberly&nbsp;Hubbert</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Speech Communication&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Cerritos Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=142.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=142">Project Planning Template</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>David&nbsp;Jaffee</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;City University of New York, The Graduate Center&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=108.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=108">Visualizing History</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Wyn&nbsp;Kelley</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Literature/Comparative Media Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Massachusetts Institute of Technology&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=121.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=121">Using Multimedia Annotation</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Mills&nbsp;Kelly</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Independent Investigators University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=30.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=30">Making Collaboration Visible</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Arthur&nbsp;C&nbsp;Lau</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Linguistics; College Reading&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;LaGuardia Community College, CUNY&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=88.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=88">Reading the Biography</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Lois&nbsp;Leveen</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Multicultural American Literature, American Studies, Ethnic Studies, Architecture&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Independent Investigators University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=122.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=122">Putting the Text in Context</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Sherry&nbsp;Linkon</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Youngstown State University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=16.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=16">Making Interdisciplinarity Visible</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Viet&nbsp;Thanh&nbsp;Nguyen</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English/American Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;University of Southern California&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=138.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=138">How Do We Tell Stories?</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Patricia&nbsp;E.&nbsp;O'Connor, Ph.D.</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English: Theory and Practice of Writing&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Georgetown University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=200.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=200">Readers Explore Writers' Knowledge</a></li><li><a href="dsp_poster.cfm-posterid=202.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=202">Hypertext Monsters: Student Web Pages and Associative Thinking </a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Susan&nbsp;Oliver</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;American History&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Cerritos Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=206.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=206">How Do Students Understand and Interprete Historical Evidence?</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Martha&nbsp;Irene&nbsp;Pallante</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Youngstown State University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=72.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=72">Impact of Textual Literacy on Student Learning</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Suzanne&nbsp;C.&nbsp;Schick</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Mass Communication&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Borough of Manhattan Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=141.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=141">Using New Media to Initiate Student-Centered Learning in a Mass Media Class</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Amilcar&nbsp;Shabazz</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;History/American Studies/African Diasporic Studies&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;University of Alabama&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=130.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=130">Can We Learn African American Studies Better in Cyberspace?</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Carol&nbsp;A.&nbsp;Sheppard</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Biology/Entomology&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Washington State University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=83.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=83">Untitled</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Christine&nbsp;Sleeter</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Multicultural/Anti-racist education, Teacher education&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;California State University -- Monterey Bay&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=199.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=199">Multicultural Curriculum, Ideology, and Perspective</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Melissa&nbsp;Trimble&nbsp;Smith</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Foreign Languages and the Humanities&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Youngstown State University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=149.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=149">MAKING SENSE OF FOREIGN LANGUAGE STUDY</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Elizabeth&nbsp;Hervey&nbsp;Stephen</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;School of Foreign Service&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Georgetown University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=95.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=95">Journeys Far From Home</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Edward&nbsp;Tang</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;University of Alabama&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=238.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=238">The Efficacy of Online Group Forums</a></li></td>
+								</tr>
+							
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Rachel&nbsp;Theilheimer</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Early Childhood Education&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Borough of Manhattan Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=139.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=139">Meshing it All Together:  How First Semester Early Childhood Students Make Sense of New Information about Children, Families, and Schooling</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>Joseph&nbsp;Ugoretz</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;English&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Borough of Manhattan Community College&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr bgcolor="#CCCCCC">
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=177.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=177">Casting Wider and Digging Deeper<br>Science Fiction Online</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+								
+								
+									
+								
+								
+								
+									<tr>
+								
+									
+										<td class="p-text-uj" width="160" valign="top">
+											<b>John&nbsp;Ward</b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="160" valign="top">
+											<b><span style="text-justify: left">&nbsp;Educational Foundations&nbsp;</span></b>
+										</td>
+										<td width="20">
+											&nbsp;
+										</td>
+										<td class="p-text-small-uj" width="280" valign="top">
+											<b>&nbsp;Millersville University&nbsp;</b>
+										</td>
+									
+								</tr>
+								
+								
+									<tr>
+								
+									<td colspan="5" class="p-text-uj">
+										<li><a href="dsp_poster.cfm-posterid=71.htm" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_poster.cfm?posterid=71">Can reflection on teaching be meaningfully assessed?</a></li></td>
+								</tr>
+							
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+					</table>
+				</td>
+			</tr>
+		</table>
+				
+	
+	
+	<div align="center">
+		<h2>Keyword Search</h2>
+		<span class="p-text">You can also search through the posters by keyword.  Enter your search criteria in the box below
+		and click on "Search" -- you can use standard logical connectives such as AND and NOT.
+		<FORM action="http://cfdev.georgetown.edu/training/levined2/vkp/posters/dsp_searchresults.cfm" method="post">
+			Search For: <INPUT type="text" name="criteria">
+			<INPUT type="submit" value="Search">
+		</FORM>
+		</span>
+	</div>
+	
+	
+	
+	
+
+    </TD>
+   
+  </TR>
+</table>
+ <!--End Content Table -->
+
+
+<!--Begin Bottom Nav-->
+<table align="center">
+  <tr> 
+    <td valign="middle" align="center"><img src="yellowDot.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/yellowDot.gif" width="750" height="1"></td>
+  </tr>
+  <tr> 
+    <td valign="middle" align="center"> 
+      <p class="bottomLink"><a class="bottomNavLink" href="javascript:if(confirm('http://crossroads.georgetown.edu/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/'" tppabs="http://crossroads.georgetown.edu/" target="_blank">Crossroads 
+        Home</a> | <a class="bottomNavLink" href="javascript:if(confirm('http://cndls.georgetown.edu/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cndls.georgetown.edu/'" tppabs="http://cndls.georgetown.edu/" target="_blank">CNDLS</a> 
+        | <a class="bottomNavLink" href="javascript:if(confirm('http://www.georgetown.edu/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.georgetown.edu/'" tppabs="http://www.georgetown.edu/" target="_blank">Georgetown 
+        University</a> | <a class="bottomNavLink" href="javascript:if(confirm('http://www.carnegiefoundation.org/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.carnegiefoundation.org/'" tppabs="http://www.carnegiefoundation.org/" target="_blank">Carnegie 
+        Foundation</a> | <a class="bottomNavLink" href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/search.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/search.htm'" tppabs="http://crossroads.georgetown.edu/vkp/search.htm">Search</a> 
+        | <a class="bottomNavLink" href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/contact_us.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/contact_us.htm'" tppabs="http://crossroads.georgetown.edu/vkp/contact_us.htm">Contact 
+        Us</a> | <a class="bottomNavLink" href="javascript:if(confirm('http://crossroads.georgetown.edu/vkp/login.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://crossroads.georgetown.edu/vkp/login.htm'" tppabs="http://crossroads.georgetown.edu/vkp/login.htm">Login</a></p>
+    </td>
+  </tr>
+  <tr> 
+    <td valign="middle" align="center">
+      <p class="copyright">&copy; 2002 Visible Knowledge Project and Georgetown 
+        University. All Rights Reserved.</p>
+    </td>
+  </tr>
+  <tr> 
+    <td valign="middle" align="center"><img src="yellowDot.gif" tppabs="http://cfdev.georgetown.edu/cndls/vkp/images/yellowDot.gif" width="750" height="1"></td>
+  </tr>
+</table>
+<!-- End ImageReady Slices -->
+
+
+
+ 
+<map name="tempMap"> 
+  <area shape="rect" coords="0,0,50,12" href="javascript:if(confirm('http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/login.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/login.htm'" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/login.htm" alt="Login" title="Login">
+  <area shape="rect" coords="0,14,73,27" href="javascript:if(confirm('http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/newsletter/newsletterIndex.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/newsletter/newsletterIndex.htm'" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/newsletter/newsletterIndex.htm" alt="Newsletter" title="Newsletter">
+  <area shape="rect" coords="0,45,59,57" href="javascript:if(confirm('http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/search.htm  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/search.htm'" tppabs="http://cfdev.georgetown.edu/training/levined2/vkp/Templates/VKP%20beta/search.htm" alt="Search" title="Search">
+</map>
+</BODY>
+</HTML>

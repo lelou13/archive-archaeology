@@ -1,0 +1,284 @@
+MIME-Version: 1.0
+X-Document-Type: Worksheet
+Content-Location: file:///C:/DF0ABA58/FieldSpecimensCatalogCA-MNT-18.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 10">
+<link rel=3DFile-List href=3D"FieldSpecimensCatalogCA-MNT-18_files/filelist=
+.xml">
+<link rel=3DEdit-Time-Data
+href=3D"FieldSpecimensCatalogCA-MNT-18_files/editdata.mso">
+<link rel=3DOLE-Object-Data
+href=3D"FieldSpecimensCatalogCA-MNT-18_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+x\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>CSUMB</o:Author>
+  <o:LastAuthor>Ruben Mendoza</o:LastAuthor>
+  <o:Created>2003-02-13T23:37:44Z</o:Created>
+  <o:LastSaved>2004-04-22T00:39:15Z</o:LastSaved>
+  <o:Company>CSUMB</o:Company>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:DownloadComponents/>
+  <o:LocationOfComponents HRef=3D"file:///F:\"/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;}
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding:0px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl24
+	{mso-style-parent:style0;
+	font-weight:700;
+	font-family:"Times New Roman", serif;
+	mso-font-charset:0;
+	border:.5pt solid windowtext;
+	background:silver;
+	mso-pattern:auto none;}
+.xl25
+	{mso-style-parent:style0;
+	font-weight:700;
+	font-family:"Times New Roman", serif;
+	mso-font-charset:0;
+	border:.5pt solid windowtext;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet1</x:Name>
+    <x:WorksheetOptions>
+     <x:Print>
+      <x:ValidPrinterInfo/>
+      <x:HorizontalResolution>600</x:HorizontalResolution>
+      <x:VerticalResolution>0</x:VerticalResolution>
+     </x:Print>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:ActiveRow>10</x:ActiveRow>
+       <x:ActiveCol>2</x:ActiveCol>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:WindowHeight>8835</x:WindowHeight>
+  <x:WindowWidth>15180</x:WindowWidth>
+  <x:WindowTopX>120</x:WindowTopX>
+  <x:WindowTopY>120</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+ <x:ExcelName>
+  <x:Name>_FilterDatabase</x:Name>
+  <x:Hidden/>
+  <x:SheetIndex>1</x:SheetIndex>
+  <x:Formula>=3DSheet1!$A$6:$I$6</x:Formula>
+ </x:ExcelName>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext=3D"edit">
+  <o:idmap v:ext=3D"edit" data=3D"1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table x:str border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D854 style=
+=3D'border-collapse:
+ collapse;table-layout:fixed;width:642pt'>
+ <col width=3D74 style=3D'mso-width-source:userset;mso-width-alt:2706;width=
+:56pt'>
+ <col width=3D148 style=3D'mso-width-source:userset;mso-width-alt:5412;widt=
+h:111pt'>
+ <col width=3D204 style=3D'mso-width-source:userset;mso-width-alt:7460;widt=
+h:153pt'>
+ <col width=3D115 style=3D'mso-width-source:userset;mso-width-alt:4205;widt=
+h:86pt'>
+ <col width=3D58 style=3D'mso-width-source:userset;mso-width-alt:2121;width=
+:44pt'>
+ <col width=3D57 style=3D'mso-width-source:userset;mso-width-alt:2084;width=
+:43pt'>
+ <col width=3D55 style=3D'mso-width-source:userset;mso-width-alt:2011;width=
+:41pt'>
+ <col width=3D102 style=3D'mso-width-source:userset;mso-width-alt:3730;widt=
+h:77pt'>
+ <col width=3D41 style=3D'mso-width-source:userset;mso-width-alt:1499;width=
+:31pt'>
+ <tr class=3Dxl24 height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl24 width=3D74 style=3D'height:12.75pt;width:56p=
+t'>CA-MNT-18</td>
+  <td class=3Dxl24 width=3D148 style=3D'border-left:none;width:111pt'>Date<=
+/td>
+  <td class=3Dxl24 width=3D204 style=3D'border-left:none;width:153pt'>Excav=
+ators</td>
+  <td class=3Dxl24 width=3D115 style=3D'border-left:none;width:86pt'>&nbsp;=
+</td>
+  <td class=3Dxl24 width=3D58 style=3D'border-left:none;width:44pt'>Recorde=
+rs</td>
+  <td class=3Dxl24 width=3D57 style=3D'border-left:none;width:43pt'>&nbsp;<=
+/td>
+  <td class=3Dxl24 width=3D55 style=3D'border-left:none;width:41pt'>&nbsp;<=
+/td>
+  <td class=3Dxl24 width=3D102 style=3D'border-left:none;width:77pt'>&nbsp;=
+</td>
+  <td class=3Dxl24 width=3D41 style=3D'border-left:none;width:31pt'>&nbsp;<=
+/td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 colspan=3D9 style=3D'height:12.75pt;mso-ignore:colspan'><=
+/td>
+ </tr>
+ <tr class=3Dxl24 height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl24 style=3D'height:12.75pt'>Str/Feature</td>
+  <td class=3Dxl24 style=3D'border-left:none'>Unit</td>
+  <td class=3Dxl24 style=3D'border-left:none'>Level</td>
+  <td class=3Dxl24 style=3D'border-left:none'>Objective</td>
+  <td class=3Dxl24 style=3D'border-left:none'>Datum</td>
+  <td class=3Dxl24 style=3D'border-left:none'>HI</td>
+  <td class=3Dxl24 style=3D'border-left:none'>&nbsp;</td>
+  <td class=3Dxl24 style=3D'border-left:none'>&nbsp;</td>
+  <td class=3Dxl24 style=3D'border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=3D34 style=3D'height:25.5pt;mso-xlrowspan:2'>
+  <td height=3D34 colspan=3D9 style=3D'height:25.5pt;mso-ignore:colspan'></=
+td>
+ </tr>
+ <tr class=3Dxl25 height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl24 id=3D"_x0000_s1034" x:autofilter=3D"all"
+  x:autofilterrange=3D"$A$6:$I$6" style=3D'height:12.75pt'>FS#</td>
+  <td class=3Dxl24 id=3D"_x0000_s1035" x:autofilter=3D"all" style=3D'border=
+-left:none'>Catalog
+  #</td>
+  <td class=3Dxl24 id=3D"_x0000_s1036" x:autofilter=3D"all" style=3D'border=
+-left:none'>Description</td>
+  <td class=3Dxl24 id=3D"_x0000_s1037" x:autofilter=3D"all" style=3D'border=
+-left:none'>Material
+  Type</td>
+  <td class=3Dxl24 id=3D"_x0000_s1038" x:autofilter=3D"all" style=3D'border=
+-left:none'>N
+  cm</td>
+  <td class=3Dxl24 id=3D"_x0000_s1039" x:autofilter=3D"all" style=3D'border=
+-left:none'>W
+  cm</td>
+  <td class=3Dxl24 id=3D"_x0000_s1040" x:autofilter=3D"all" style=3D'border=
+-left:none'>D
+  cm</td>
+  <td class=3Dxl24 id=3D"_x0000_s1041" x:autofilter=3D"all" style=3D'border=
+-left:none'>Weight
+  (grms)</td>
+  <td class=3Dxl24 id=3D"_x0000_s1042" x:autofilter=3D"all" style=3D'border=
+-left:none'
+  x:str=3D"Lot ">Lot<span style=3D'mso-spacerun:yes'>&nbsp;</span></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 align=3Dright style=3D'height:12.75pt' x:num>1</td>
+  <td>CA-MNT-18-</td>
+  <td></td>
+  <td>chert</td>
+  <td colspan=3D4 style=3D'mso-ignore:colspan'></td>
+  <td>x</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 align=3Dright style=3D'height:12.75pt' x:num>2</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>shell</td>
+  <td colspan=3D5 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 align=3Dright style=3D'height:12.75pt' x:num>3</td>
+  <td colspan=3D8 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D74 style=3D'width:56pt'></td>
+  <td width=3D148 style=3D'width:111pt'></td>
+  <td width=3D204 style=3D'width:153pt'></td>
+  <td width=3D115 style=3D'width:86pt'></td>
+  <td width=3D58 style=3D'width:44pt'></td>
+  <td width=3D57 style=3D'width:43pt'></td>
+  <td width=3D55 style=3D'width:41pt'></td>
+  <td width=3D102 style=3D'width:77pt'></td>
+  <td width=3D41 style=3D'width:31pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

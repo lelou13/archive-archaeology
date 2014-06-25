@@ -1,0 +1,35 @@
+<RC$title = Perl Search CGI>
+<RC$navurl = /search/index.stm>
+<RC$navname = Search>
+<RCinclude /header.stm>
+<BR>
+<B>
+<FONT SIZE="+1">P</FONT>ERL 
+<FONT SIZE="+1">S</FONT>EARCH 
+<FONT SIZE="+1">T</FONT>OOL
+</B>
+<P>
+</CENTER> 
+<P>
+The PERL search tool is provided as an alternative to the 
+<A HREF="index.htm">Sambar Search Engine</A>.  Unlike the
+Sambar Search Engine which requires the site administrator
+to pre-index the pages being searched, the PERL search tool walks 
+all files found in the </I>Documents Directory</I> in "real-time" 
+when the search is requested.  
+<P>
+<CENTER>
+<TABLE cellpadding=5>
+<TR><TD>
+<B>Search:</B><BR>
+<FORM METHOD=POST ACTION="/cgi-bin/search.pl">
+<INPUT NAME="query" SIZE=30 VALUE="" MAXLENGTH=40>&nbsp
+<INPUT TYPE=image SRC="/sysimage/system/go.gif" height=20 width=20 border=0><BR>
+<INPUT TYPE=radio NAME="logic" VALUE="or" CHECKED> <B>OR</B> together terms<BR>
+<INPUT TYPE=radio NAME="logic" VALUE="and"> <B>AND</B> together terms
+</FORM>
+</TD></TR>
+</TABLE>
+</CENTER>
+<P> 
+<RCinclude /footer.stm>

@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>Remote Control Bar</TITLE>
+<!-- Created in: Corel(R) Presentations(TM) 8 -->
+<!-- DO NOT MODIFY THIS FILE -->
+<SCRIPT>
+<!-- Activate cloak
+var vCheck = 1;     // Browser Info
+var First = 1;
+var Last = 12;
+var Slide = 1;
+if(navigator.appName != "Netscape") vCheck = 0;
+function mON(x1, x2)
+{
+   if(vCheck == 1)
+      document.images[x1].src = "images//"+x2+"x.gif";
+}
+function mOFF(x1, x2)
+{
+   if(vCheck == 1)
+      document.images[x1].src = "images//"+x2+".gif";
+}
+function getit(url) {
+  var five;
+  if (opener.closed) {
+    five=window.open('','Root','toolbar=yes,location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,copyhistory=no');
+    if(opener.vIndex == 1)
+      opener.location.href = url;
+    else
+      opener.location.href = "index2.html";
+    window.close();
+  } else {
+    if(opener.vIndex == 1)
+      opener.location.href = url;
+    else
+      opener.location.href = "index2.html";
+    window.close();
+  }
+}
+function autorun()
+{
+   opener.location.href = "xslide1.html";
+}
+function FirstSlide()
+{
+   if(Slide != First)
+   {
+      Slide = First;
+      opener.location.href = "fslide"+Slide+".html";
+   }
+}
+function NextSlide()
+{
+   Slide++;
+   if(Slide <= Last)
+      opener.location.href = "fslide"+Slide+".html";
+   else
+      Slide--;
+}
+function PreviousSlide()
+{
+   Slide--;
+   if(Slide >= First)
+      opener.location.href = "fslide"+Slide+".html";
+   else
+      Slide++;
+}
+function LastSlide()
+{
+   if(Slide != Last)
+   {
+      Slide = Last;
+      opener.location.href = "fslide"+Slide+".html";
+   }
+}
+// Deactivate cloak -->
+</SCRIPT>
+</HEAD>
+<BODY BACKGROUND="images/" TEXT="00FF00" LINK="0000FF" VLINK="00FF00" ALINK="FF0000" BGCOLOR="000000">
+<A HREF="Kush2.shw" TARGET="_top" onMouseOver="mON(0,1); window.status='Download the original slide show'; return true" OnMouseOut="mOFF(0,1)"><IMG SRC="images/1.gif" BORDER=0 ALT="Download show"></A>
+<IMG SRC="images/split.gif">
+<A HREF="JavaScript:FirstSlide()" onMouseOver="mON(2,2); window.status='Goto the beginning slide'; return true" onMouseOut="mOFF(2,2)"><IMG SRC="images/2.gif" BORDER=0 ALT="Goto beginning"></A>
+<A HREF="JavaScript:PreviousSlide()"onMouseOver="mON(3,3); window.status='Previous slide'; return true" onMouseOut="mOFF(3,3)"><IMG SRC="images/3.gif" BORDER=0 ALT="Previous"></A>
+<A HREF="JavaScript:NextSlide()" onMouseOver="mON(4,4); window.status='Next slide'; return true" onMouseOut="mOFF(4,4)"><IMG SRC="images/4.gif" BORDER=0 ALT="Next"></A>
+<A HREF="JavaScript:LastSlide()" onMouseOver="mON(5,5); window.status='Goto the ending slide'; return true" onMouseOut="mOFF(5,5)"><IMG SRC="images/5.gif" BORDER=0 ALT="Goto end"></A>
+<IMG SRC="images/split.gif">
+<A HREF="JavaScript:getit('index.html')" onMouseOver="mON(7,8); window.status='Remote'; return true" onMouseOut="mOFF(7,8)"><IMG SRC="images/8.gif" BORDER=0 ALT="Remote"></A>
+</BODY>
+</HTML>

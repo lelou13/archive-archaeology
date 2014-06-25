@@ -1,0 +1,116 @@
+App.progressCountTotal = 14;
+App.progressCountCurrent = 0;
+fw.dismissBatchDialogWhenDone = true;
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/01_Stylus_Manufacture.jpg');
+App.progressCountCurrent = 1;
+App.batchStatusString = '01_Stylus_Manufacture.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/01_Stylus_Manufacture_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/01_Stylus_Manufacture_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/01_Stylus_Manufacture_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/01_Stylus_Manufacture_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/01_Stylus_Manufacture_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/01_Stylus_Manufacture_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/02_CuneiformNotes_Chavis.jpg');
+App.progressCountCurrent = 2;
+App.batchStatusString = '02_CuneiformNotes_Chavis.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/02_CuneiformNotes_Chavis_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/02_CuneiformNotes_Chavis_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/02_CuneiformNotes_Chavis_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/02_CuneiformNotes_Chavis_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/02_CuneiformNotes_Chavis_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/02_CuneiformNotes_Chavis_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/03_CuneiformProduction_MinkowH.jpg');
+App.progressCountCurrent = 3;
+App.batchStatusString = '03_CuneiformProduction_MinkowH.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/03_CuneiformProduction_MinkowH_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/03_CuneiformProduction_MinkowH_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/03_CuneiformProduction_MinkowH_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/03_CuneiformProduction_MinkowH_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/03_CuneiformProduction_MinkowH_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/03_CuneiformProduction_MinkowH_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/04_InternetUsageSturm.jpg');
+App.progressCountCurrent = 4;
+App.batchStatusString = '04_InternetUsageSturm.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/04_InternetUsageSturm_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/04_InternetUsageSturm_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/04_InternetUsageSturm_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/04_InternetUsageSturm_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/04_InternetUsageSturm_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/04_InternetUsageSturm_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/05_JillMinkow_StylusUsage.jpg');
+App.progressCountCurrent = 5;
+App.batchStatusString = '05_JillMinkow_StylusUsage.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/05_JillMinkow_StylusUsage_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/05_JillMinkow_StylusUsage_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/05_JillMinkow_StylusUsage_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/05_JillMinkow_StylusUsage_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/05_JillMinkow_StylusUsage_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/05_JillMinkow_StylusUsage_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/06_CuneiformStylusUsage.jpg');
+App.progressCountCurrent = 6;
+App.batchStatusString = '06_CuneiformStylusUsage.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/06_CuneiformStylusUsage_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/06_CuneiformStylusUsage_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/06_CuneiformStylusUsage_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/06_CuneiformStylusUsage_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/06_CuneiformStylusUsage_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/06_CuneiformStylusUsage_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/07_CuneiformTablet_Harder.jpg');
+App.progressCountCurrent = 7;
+App.batchStatusString = '07_CuneiformTablet_Harder.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/07_CuneiformTablet_Harder_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/07_CuneiformTablet_Harder_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/07_CuneiformTablet_Harder_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/07_CuneiformTablet_Harder_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/07_CuneiformTablet_Harder_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/07_CuneiformTablet_Harder_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/08_CuneiformTablet_Minkow.jpg');
+App.progressCountCurrent = 8;
+App.batchStatusString = '08_CuneiformTablet_Minkow.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/08_CuneiformTablet_Minkow_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/08_CuneiformTablet_Minkow_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/08_CuneiformTablet_Minkow_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/08_CuneiformTablet_Minkow_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/08_CuneiformTablet_Minkow_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/08_CuneiformTablet_Minkow_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/09_CuneiformTabletStylus.jpg');
+App.progressCountCurrent = 9;
+App.batchStatusString = '09_CuneiformTabletStylus.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/09_CuneiformTabletStylus_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/09_CuneiformTabletStylus_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/09_CuneiformTabletStylus_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/09_CuneiformTabletStylus_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/09_CuneiformTabletStylus_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/09_CuneiformTabletStylus_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/10_MinkowHarder.jpg');
+App.progressCountCurrent = 10;
+App.batchStatusString = '10_MinkowHarder.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/10_MinkowHarder_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/10_MinkowHarder_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/10_MinkowHarder_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/10_MinkowHarder_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/10_MinkowHarder_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/10_MinkowHarder_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/11_CuneiformTablets.jpg');
+App.progressCountCurrent = 11;
+App.batchStatusString = '11_CuneiformTablets.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/11_CuneiformTablets_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/11_CuneiformTablets_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/11_CuneiformTablets_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/11_CuneiformTablets_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/11_CuneiformTablets_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/11_CuneiformTablets_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/12_CuneiformTablet_Gadberry.jpg');
+App.progressCountCurrent = 12;
+App.batchStatusString = '12_CuneiformTablet_Gadberry.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/12_CuneiformTablet_Gadberry_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/12_CuneiformTablet_Gadberry_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/12_CuneiformTablet_Gadberry_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/12_CuneiformTablet_Gadberry_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/12_CuneiformTablet_Gadberry_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/12_CuneiformTablet_Gadberry_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/13_CuneiformTablet_AraceliAria.jpg');
+App.progressCountCurrent = 13;
+App.batchStatusString = '13_CuneiformTablet_AraceliAria.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/13_CuneiformTablet_AraceliAria_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/13_CuneiformTablet_AraceliAria_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/13_CuneiformTablet_AraceliAria_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/13_CuneiformTablet_AraceliAria_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/13_CuneiformTablet_AraceliAria_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/13_CuneiformTablet_AraceliAria_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+doc = fw.openDocument('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/Cuneiform_Slideshow/14_CuneiformTablet_Nelia.jpg');
+App.progressCountCurrent = 14;
+App.batchStatusString = '14_CuneiformTablet_Nelia.jpg';
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/14_CuneiformTablet_Nelia_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/14_CuneiformTablet_Nelia_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/images/14_CuneiformTablet_Nelia_jpg.jpg',({applyScale:false, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:"100", useScale:true, xSize:0, ySize:0}));
+if (!Files.exists('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/14_CuneiformTablet_Nelia_jpg.jpg') || confirm('file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/14_CuneiformTablet_Nelia_jpg.jpg already exists. Click OK to replace the file.')) 
+fw.exportDocumentAs(doc, 'file:///C|/Documents and Settings/rmendoza/Desktop/Cuneiform_Slideshow/thumbnails/14_CuneiformTablet_Nelia_jpg.jpg',({applyScale:true, colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:80, jpegSmoothness:0, jpegSubsampling:0, name:"JPEG - Better Quality", numEntriesRequested:0, percentScale:100, useScale:false, xSize:-100, ySize:-100}));
+fw.closeDocument(doc);
+'done';

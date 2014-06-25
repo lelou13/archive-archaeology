@@ -1,0 +1,200 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint">
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="2"/>
+ </o:shapelayout><p:colorscheme
+  colors="#000066,#FFFFCC,#000000,#FFFFCC,#00CC99,#3333CC,#CCCCFF,#B2B2B2"/>
+ <v:background id="_x0000_s2049" o:bwmode="white" fillcolor="#006 [0]"
+  o:targetscreensize="800,600">
+  <v:fill color2="#6b2300" type="gradient"/>
+ </v:background><p:shaperange id="_x0000_m2050">
+  <v:shapetype id="_x0000_m2050" style='position:absolute;left:10.625pt;top:70pt;
+   width:699.625pt;height:91pt;v-text-anchor:middle' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m0,0l0,21600,21600,21600,21600,0xe" filled="f"
+   fillcolor="#0c9 [4]" stroked="f" strokecolor="#ffc [1]">
+   <v:fill o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <v:textbox inset="7.25pt,46038emu,7.25pt,46038emu"/>
+   <p:placeholder type="title"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_m2051">
+  <v:shapetype id="_x0000_m2051" style='position:absolute;left:10.625pt;top:166.625pt;
+   width:700.5pt;height:325.625pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m0,0l0,21600,21600,21600,21600,0xe" filled="f" fillcolor="#0c9 [4]"
+   stroked="f" strokecolor="#ffc [1]">
+   <v:fill o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <v:textbox inset="7.25pt,46038emu,7.25pt,46038emu"/>
+   <p:placeholder type="body" position="1"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s2055">
+  <v:shape id="_x0000_s2055" style='position:absolute;left:282.5pt;top:4.25pt;
+   width:156.125pt;height:51.5pt' coordsize="1249,412" path="m16,67hel26,62,452,62,483,40,505,27,526,17,552,11,578,5,605,2,639,,678,5,714,15,740,27,768,40,786,51,802,64,1209,62,1223,66,1233,73,1242,91,1246,112,1248,137,1248,349,809,350,700,409,523,411,437,346,46,349,,349,,152,,123,5,94,9,80,16,67e"
+   fillcolor="#0cf" stroked="f" strokecolor="#ffc [1]">
+   <v:fill angle="-90" focus="-50%" type="gradient"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:oval id="_x0000_s2056" style='position:absolute;left:331.125pt;
+   top:4.875pt;width:60.375pt;height:53pt' fillcolor="#0cf" stroked="f"
+   strokecolor="#ffc [1]">
+   <v:fill focusposition=".5,.5" focussize="" method="linear sigma" focus="100%"
+    type="gradientRadial"/>
+  </v:oval></p:shaperange>
+ <p:shaperange id="_x0000_s2057">
+  <v:shape id="_x0000_s2057" style='position:absolute;left:282.375pt;top:35.625pt;
+   width:156.25pt;height:24pt' coordsize="1250,192" path="m43,38hel60,42,79,38,98,42,112,54,128,63,154,55,176,51,208,51,231,45,251,50,269,57,285,60,311,51,338,51,378,54,394,66,420,63,457,60,483,80,498,84,513,99,521,121,536,130,555,130,578,129,601,130,617,139,630,132,651,131,672,118,688,121,716,117,728,101,761,88,769,68,786,58,814,52,829,60,844,56,862,63,881,57,917,63,933,69,951,53,963,51,977,57,989,55,1006,38,1035,33,1049,35,1063,35,1084,15,1096,6,1112,10,1130,32,1148,18,1164,,1179,1,1195,38,1209,32,1227,16,1241,16,1249,28,1249,122,822,144,692,183,563,191,499,156,441,98,,88,,19,7,30,18,33,32,34,43,38e"
+   fillcolor="#030" stroked="f" strokecolor="#ffc [1]">
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:shape id="_x0000_s2058" style='position:absolute;left:282.375pt;
+   top:40pt;width:156.25pt;height:24.125pt' coordsize="1250,193" path="m16,122hel26,125,38,125,450,125,458,135,487,155,511,166,532,175,559,184,587,188,631,192,672,188,723,178,769,158,797,137,811,125,1210,125,1224,124,1234,121,1243,114,1247,106,1249,96,1249,14,1238,,1232,4,1227,18,1223,34,1218,33,1211,32,1196,24,1186,17,1170,14,1153,21,1138,33,1126,25,1117,24,1103,17,1089,19,1079,27,1074,38,1063,33,1046,33,1025,28,1007,38,990,24,969,33,949,55,932,47,917,39,901,34,880,38,847,44,818,37,807,43,794,57,783,81,771,93,765,111,752,118,729,122,703,124,697,132,663,130,634,137,605,136,556,145,529,122,499,116,468,76,454,57,439,52,399,47,367,42,332,33,299,42,262,24,233,24,214,35,202,26,186,32,165,33,145,37,122,44,102,35,82,40,57,43,41,40,11,38,,47,1,74,3,98,9,118,16,122e"
+   fillcolor="#c60" stroked="f" strokecolor="#ffc [1]">
+   <v:fill color2="black" focus="100%" type="gradient"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:shape id="_x0000_s2059" style='position:absolute;left:283.375pt;
+   top:43.875pt;width:153.375pt;height:18pt' coordsize="1227,144" path="m339,48hel301,45,263,50,219,50,161,48,97,50,65,51,40,49,16,51,8,36,1,24,,46,8,67,46,64,81,62,103,63,122,64,134,65,170,64,204,68,284,64,341,63,389,64,440,64,465,92,485,105,527,131,558,136,596,143,642,143,684,137,728,121,760,106,786,82,806,72,827,67,877,74,937,68,995,69,1021,67,1071,70,1118,67,1160,72,1211,69,1223,56,1226,34,1224,,1211,37,1204,55,1171,59,1112,58,1064,56,983,54,941,58,885,56,851,62,828,55,815,53,804,46,809,32,809,17,798,22,786,49,760,72,745,87,718,101,701,98,671,112,644,118,618,124,585,108,557,110,546,92,520,93,507,98,486,86,469,77,461,62,446,29,432,24,425,44,413,43,372,55,339,48e"
+   fillcolor="#006 [0]" stroked="f" strokecolor="#ffc [1]">
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:shape id="_x0000_s2060" style='position:absolute;left:383.375pt;
+   top:19.625pt;width:9.625pt;height:32pt' coordsize="77,256" path="m51,6hel47,25,76,27,65,61,66,87,73,110,61,133,57,157,51,181,42,197,32,213,20,230,13,241,,255,8,230,24,212,21,192,36,167,44,137,40,108,43,85,40,68,19,36,6,3,50,,51,6e"
+   fillcolor="#0cf" stroked="f" strokecolor="#ffc [1]">
+   <v:fill angle="-90" method="linear sigma" focus="50%" type="gradient"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:shape id="_x0000_s2061" style='position:absolute;left:283.875pt;
+   top:1.5pt;width:153.625pt;height:32.375pt' coordsize="1229,259" path="m0,175hel0,219,,259,3,226,4,201,5,154,8,132,16,124,23,130,33,131,47,138,56,146,66,146,75,141,85,128,93,129,108,139,117,144,126,149,136,151,152,144,171,158,185,151,208,138,222,138,238,127,249,122,265,136,278,132,289,138,296,138,305,138,312,143,323,138,331,124,362,137,376,152,382,176,449,121,465,101,481,91,499,83,496,98,476,123,489,119,508,110,522,116,531,132,526,146,544,148,559,158,565,170,578,167,586,178,598,196,608,193,602,178,598,162,590,156,581,145,586,122,579,106,561,103,566,91,578,81,547,82,561,75,587,64,574,62,540,71,524,65,535,56,559,53,579,50,600,42,635,37,660,41,676,55,692,63,704,57,721,60,741,72,758,88,773,108,797,115,816,128,828,139,846,151,866,147,879,141,904,141,917,126,928,128,936,128,946,134,957,139,965,129,974,126,981,130,989,124,1005,132,1015,146,1025,147,1032,149,1041,144,1048,138,1054,136,1063,130,1074,130,1084,139,1099,146,1112,139,1119,136,1128,139,1135,141,1144,149,1154,149,1166,146,1180,143,1197,138,1209,143,1216,150,1221,165,1225,189,1229,222,1229,154,1229,137,1227,126,1224,112,1218,100,1205,95,1187,93,1172,95,1156,91,1140,101,1124,96,1110,93,1099,93,1071,96,1056,98,1040,95,1024,99,1004,95,996,93,981,93,966,91,955,96,946,95,926,93,909,96,894,96,876,91,861,97,849,93,838,99,826,96,812,93,804,88,785,69,764,52,745,40,727,30,700,17,672,8,644,2,617,,591,2,560,8,528,17,500,29,474,45,452,63,426,87,399,95,376,99,352,101,328,97,309,97,249,97,231,96,180,99,148,97,109,93,61,95,32,95,19,96,10,101,2,113,,132,,152,,175e"
+   stroked="f" strokecolor="#ffc [1]">
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:shape id="_x0000_s2062" style='position:absolute;left:330pt;
+   top:18.5pt;width:7.125pt;height:31.5pt' coordsize="57,252" path="m13,6hel17,25,13,34,6,62,1,86,,108,5,135,8,160,13,184,27,200,32,217,45,234,56,251,51,235,40,216,43,196,28,170,15,140,12,94,17,64,25,34,27,12,15,,13,6e"
+   stroked="f" strokecolor="#ffc [1]">
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short"/>
+   <v:path arrowok="t"/>
+  </v:shape><v:group id="_x0000_s2063" style='position:absolute;left:5pt;top:12.125pt;
+   width:270.5pt;height:41pt' coordorigin="40,97" coordsize="2164,328">
+   <v:shape id="_x0000_s2064" style='position:absolute;left:40;top:97;width:2164;
+    height:267' coordsize="2164,267" path="m29,3hel46,,2096,,2120,2,2137,9,2152,26,2160,46,2163,69,2163,266,81,266,,266,,82,1,55,9,29,16,15,29,3e"
+    fillcolor="#0cf" stroked="f" strokecolor="#ffc [1]">
+    <v:fill method="linear sigma" focus="100%" type="gradient"/>
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2065" style='position:absolute;left:40;top:268;
+    width:2164;height:115' coordsize="2164,115" path="m75,35hel105,39,138,35,170,39,195,50,221,58,266,51,305,47,360,47,400,41,435,47,466,53,494,55,538,47,586,47,654,50,683,61,728,58,773,41,815,35,844,41,880,56,921,62,968,52,989,49,1013,56,1032,47,1053,35,1078,24,1105,21,1136,24,1167,19,1198,13,1218,13,1237,15,1265,29,1293,27,1316,41,1361,41,1399,33,1417,44,1436,55,1462,52,1493,58,1526,52,1589,58,1616,64,1647,49,1667,48,1691,53,1714,51,1743,35,1793,31,1817,33,1842,33,1878,13,1899,6,1926,9,1957,29,1988,17,2017,,2042,1,2071,35,2093,29,2125,15,2150,14,2163,26,2163,114,909,89,893,92,,82,,18,13,27,32,31,56,32,75,35e"
+    fillcolor="#030" stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2066" style='position:absolute;left:40;top:307;
+    width:2164;height:118' coordsize="2164,118" path="m29,114hel46,116,66,117,2096,117,2120,115,2137,113,2152,106,2160,98,2163,90,2163,13,2144,,2134,4,2125,17,2118,32,2109,31,2097,29,2071,22,2054,16,2027,13,1998,20,1970,31,1951,23,1934,22,1910,16,1885,18,1868,25,1861,35,1841,31,1813,31,1776,26,1744,35,1716,22,1679,31,1644,51,1614,44,1589,36,1560,32,1524,35,1467,41,1417,34,1395,38,1367,31,1348,23,1327,22,1287,26,1237,41,1194,28,1159,31,1125,48,1065,36,1019,42,988,36,943,39,897,48,866,45,801,42,760,48,692,44,636,39,575,31,518,39,454,22,404,22,371,33,349,24,322,29,287,31,252,34,211,41,176,33,143,37,99,40,71,37,20,35,,44,2,69,5,91,16,110,29,114e"
+    fillcolor="#c60" stroked="f" strokecolor="#ffc [1]">
+    <v:fill color2="black" focus="100%" type="gradient"/>
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2067" style='position:absolute;left:52;top:104;
+    width:2130;height:153' coordsize="2130,153" path="m0,74hel0,115,,152,5,122,7,98,9,55,15,34,28,27,60,22,101,24,200,24,243,28,306,24,378,26,431,25,537,28,574,27,645,24,669,29,735,24,836,27,870,31,923,28,968,33,1006,33,1080,28,1150,31,1212,38,1232,39,1316,35,1395,32,1414,30,1444,31,1526,34,1589,29,1621,30,1672,31,1714,27,1743,24,1781,30,1861,32,1914,24,1991,31,2046,31,2075,31,2094,44,2106,51,2115,64,2122,87,2129,117,2129,55,2129,39,2125,28,2120,15,2090,7,1974,5,1947,1,1856,1,1829,3,1774,3,1733,2,1658,7,1502,3,1453,5,1367,9,1312,6,1257,5,1212,5,1164,8,1135,4,1031,5,1000,5,945,4,837,6,741,4,652,4,610,5,569,2,535,2,431,2,312,4,256,2,190,4,107,,56,,34,1,19,5,5,17,1,35,,53,,74e"
+    stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2068" style='position:absolute;left:57;top:347;
+    width:2128;height:62' coordsize="2128,62" path="m0,31hel0,14,,,6,12,7,21,8,39,15,47,27,49,40,47,59,47,91,46,110,47,127,47,162,48,175,48,192,49,219,47,248,46,284,45,327,49,383,50,413,49,431,50,479,50,496,47,517,50,574,49,645,51,669,49,725,47,762,46,805,48,835,49,869,48,929,50,968,47,1005,47,1044,44,1093,47,1157,45,1230,45,1295,47,1334,43,1377,44,1394,47,1412,48,1469,47,1519,48,1587,49,1606,48,1619,48,1636,46,1670,48,1686,49,1698,47,1712,49,1739,47,1782,49,1824,45,1841,47,1859,47,1937,45,2013,47,2072,45,2092,43,2104,40,2113,34,2120,26,2127,13,2127,39,2127,45,2124,49,2118,54,2107,58,2029,61,1972,58,1945,60,1854,60,1828,59,1800,61,1772,59,1739,61,1653,60,1628,57,1547,60,1493,56,1430,60,1382,58,1336,60,1310,58,1287,58,1256,58,1235,57,1212,59,1188,57,1163,57,1134,59,1106,60,1075,60,1030,59,998,60,971,59,945,59,885,61,837,58,784,61,740,59,692,61,652,59,609,58,569,59,534,59,431,59,401,60,311,59,256,59,103,58,19,58,4,54,1,46,,39,,31e"
+    fillcolor="#006 [0]" stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape></v:group><v:group id="_x0000_s2069" style='position:absolute;
+   left:444.625pt;top:12.125pt;width:270.5pt;height:43.5pt' coordorigin="3557,97"
+   coordsize="2164,348">
+   <v:shape id="_x0000_s2070" style='position:absolute;left:3557;top:97;
+    width:2164;height:284' coordsize="2164,284" path="m29,4hel46,,2096,,2120,3,2137,10,2152,28,2160,49,2163,73,2163,283,81,283,,283,,87,1,59,9,31,16,16,29,4e"
+    fillcolor="#0cf" stroked="f" strokecolor="#ffc [1]">
+    <v:fill method="linear sigma" focus="100%" type="gradient"/>
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2071" style='position:absolute;left:3557;
+    top:278;width:2164;height:123' coordsize="2164,123" path="m75,38hel105,42,138,38,170,42,195,53,221,63,266,54,305,50,360,50,400,44,435,50,466,57,494,59,538,50,586,50,654,54,683,65,728,63,773,44,815,38,844,44,880,60,921,66,968,56,989,52,1013,60,1032,50,1053,38,1078,26,1105,22,1136,26,1167,21,1198,14,1218,14,1237,16,1265,32,1293,29,1316,44,1361,44,1399,35,1417,47,1436,59,1462,56,1493,63,1526,56,1589,63,1616,69,1647,52,1667,51,1691,57,1714,54,1743,38,1793,33,1817,35,1842,35,1878,14,1899,6,1926,10,1957,32,1988,18,2017,,2042,1,2071,38,2093,32,2125,16,2150,16,2163,28,2163,122,909,95,893,99,,88,,19,13,29,32,33,56,34,75,38e"
+    fillcolor="#030" stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2072" style='position:absolute;left:3557;
+    top:320;width:2164;height:125' coordsize="2164,125" path="m29,120hel46,123,66,124,2096,124,2120,122,2137,120,2152,113,2160,104,2163,95,2163,14,2144,,2134,4,2125,18,2118,34,2109,33,2097,31,2071,23,2054,17,2027,14,1998,21,1970,33,1951,25,1934,23,1910,17,1885,19,1868,27,1861,37,1841,33,1813,33,1776,28,1744,37,1716,24,1679,33,1644,54,1614,46,1589,38,1560,34,1524,37,1467,44,1417,36,1395,40,1367,33,1348,25,1327,24,1287,28,1237,43,1194,30,1159,33,1125,51,1065,38,1019,45,988,38,943,42,897,51,866,48,801,45,760,51,692,46,636,42,575,33,518,42,454,23,404,24,371,35,349,26,322,31,287,33,252,36,211,44,176,35,143,39,99,43,71,39,20,37,,46,2,73,5,96,16,116,29,120e"
+    fillcolor="#c60" stroked="f" strokecolor="#ffc [1]">
+    <v:fill color2="black" focus="100%" type="gradient"/>
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2073" style='position:absolute;left:3570;
+    top:104;width:2129;height:162' coordsize="2129,162" path="m0,78hel0,122,,161,5,129,7,104,9,58,15,36,28,29,60,24,101,25,200,25,243,29,306,25,378,28,431,27,537,29,574,29,645,25,669,30,735,25,836,29,870,33,923,29,968,35,1006,35,1079,29,1149,33,1212,40,1231,41,1316,37,1395,34,1414,32,1443,33,1525,36,1588,30,1621,32,1671,33,1714,29,1742,25,1781,32,1860,34,1913,25,1990,33,2046,33,2075,33,2093,47,2105,54,2115,68,2122,92,2128,124,2128,58,2128,41,2125,30,2120,16,2089,7,1974,6,1946,1,1855,1,1829,3,1774,3,1733,2,1658,8,1501,3,1453,6,1366,10,1311,6,1256,6,1212,6,1164,9,1135,4,1031,6,1000,6,945,4,837,6,741,4,652,4,610,6,569,2,535,2,431,2,312,4,256,2,190,4,107,,56,,34,1,19,6,5,18,1,37,,56,,78e"
+    stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s2074" style='position:absolute;left:3574;
+    top:363;width:2128;height:65' coordsize="2128,65" path="m0,32hel0,15,,,6,12,7,22,8,40,15,49,27,52,40,50,59,49,91,48,110,49,127,49,162,50,175,51,192,51,219,49,248,48,284,48,327,51,383,53,413,51,431,53,479,53,496,50,517,52,574,52,645,53,669,51,725,49,762,48,805,50,835,52,869,50,929,52,968,49,1005,49,1044,46,1093,50,1157,47,1230,47,1295,49,1334,46,1377,46,1394,50,1412,51,1469,49,1519,51,1587,51,1606,51,1619,51,1636,48,1670,50,1686,51,1698,50,1712,52,1739,49,1782,51,1824,48,1841,50,1859,50,1937,48,2013,50,2072,47,2092,45,2104,42,2113,36,2120,27,2127,14,2127,40,2127,47,2124,51,2118,57,2107,61,2029,64,1972,61,1945,63,1854,63,1828,62,1800,64,1772,62,1739,64,1653,63,1628,60,1547,63,1493,59,1430,63,1382,61,1336,63,1310,61,1287,61,1256,61,1235,60,1212,62,1188,60,1163,60,1134,62,1106,63,1075,63,1030,62,998,63,971,62,945,62,885,64,837,61,784,64,740,62,692,64,652,62,609,61,569,62,534,62,431,62,401,63,311,62,256,62,103,61,19,61,4,56,1,49,,41,,32e"
+    fillcolor="#006 [0]" stroked="f" strokecolor="#ffc [1]">
+    <v:stroke startarrowwidth="narrow" startarrowlength="short"
+     endarrowwidth="narrow" endarrowlength="short"/>
+    <v:path arrowok="t"/>
+   </v:shape></v:group></p:shaperange>
+ <p:shaperange id="_x0000_s2075">
+  <v:shapetype id="_x0000_s2075" style='position:absolute;left:54pt;top:492pt;
+   width:150pt;height:36pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m0,0l0,21600,21600,21600,21600,0xe" filled="f" fillcolor="#0c9 [4]"
+   stroked="f" strokecolor="#ffc [1]" strokeweight="1pt">
+   <v:fill color2="#006 [0]" o:detectmouseclick="t"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short" color2="#006 [0]" joinstyle="miter" endcap="square"
+    o:forcedash="t"/>
+   <v:shadow color="black [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="dateTime" position="2" size="half"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s2076">
+  <v:shapetype id="_x0000_s2076" style='position:absolute;left:246pt;top:492pt;
+   width:228pt;height:36pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m0,0l0,21600,21600,21600,21600,0xe" filled="f" fillcolor="#0c9 [4]"
+   stroked="f" strokecolor="#ffc [1]" strokeweight="1pt">
+   <v:fill color2="#006 [0]" o:detectmouseclick="t"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short" color2="#006 [0]" joinstyle="miter" endcap="square"
+    o:forcedash="t"/>
+   <v:shadow color="black [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="footer" position="3" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s2077">
+  <v:shapetype id="_x0000_s2077" style='position:absolute;left:516pt;top:492pt;
+   width:150pt;height:36pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m0,0l0,21600,21600,21600,21600,0xe" filled="f" fillcolor="#0c9 [4]"
+   stroked="f" strokecolor="#ffc [1]" strokeweight="1pt">
+   <v:fill color2="#006 [0]" o:detectmouseclick="t"/>
+   <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+    endarrowlength="short" color2="#006 [0]" joinstyle="miter" endcap="square"
+    o:forcedash="t"/>
+   <v:shadow color="black [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="slideNumber" position="4" size="quarter"/>
+  </v:shapetype></p:shaperange>
+</xml>

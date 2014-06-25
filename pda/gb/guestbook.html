@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+  <form action=view_guestbook.php?id=1&pg=1 method=post>
+    <font face=arial size=-1><b>Name : &nbsp;</b></font><br>
+    <input type=text name=guest_name size=53 maxlength=40><br><br>
+
+    <font face=arial size=-1><b>Email : &nbsp;</b></font><br>
+    <input type=text name=guest_email size=53 maxlength=40><br><br>
+
+    <font face=arial size=-1><b>Message : &nbsp;</b></font><br>
+    <textarea name=guest_msg rows=10 cols=40></textarea><br>
+
+    <input type=submit name=submit value=submit>
+  </form>
+<br>
+  <table align=center border=0 width=240 cellspacing=0>
+    <tr>
+      <td align=left>
+        <font face=arial size=-1>
+          <a href='view_guestbook.php?id=0&pg=1'>View Message</a>
+        </font>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+

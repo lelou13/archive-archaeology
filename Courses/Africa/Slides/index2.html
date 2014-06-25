@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Nubia: The Middle Nile</TITLE>
+<META NAME="GENERATOR" CONTENT="Corel(R) Presentations(TM) 8 - Publish to HTML">
+<!-- Created in: Corel Presentations 8 -->
+<!-- DO NOT MODIFY THIS FILE -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Activeate cloack
+var First = 1;
+var Last = 11;
+var Slide = 1;
+function FirstSlide()
+{
+   if(Slide != First)
+   {
+      Slide = First;
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   }
+}
+function NextSlide()
+{
+   Slide++;
+   if(Slide <= Last)
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   else
+      Slide--;
+}
+function PreviousSlide()
+{
+   Slide--;
+   if(Slide >= First)
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   else
+      Slide++;
+}
+function LastSlide()
+{
+   if(Slide != Last)
+   {
+      Slide = Last;
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   }
+}
+function GotoSlide(Where)
+{
+   Slide = Where;
+   frames["fslide"].location.href = "fslide"+Where+".html";
+}
+function table()
+{
+   location.href = "index.html";
+}
+var click=null;
+function rcontrol()
+{
+   click = window.open('remote2.html', 'ControlBar', 'width=370,height=45,resizable=yes,status=no');
+   if (click != null)
+   {
+      location.href = "fslide1.html";
+      if (click.opener == null)
+         click.opener = self;
+   }
+}
+// Deactiveate cloack -->
+</SCRIPT>
+</HEAD>
+<FRAMESET ROWS="70,*" BORDER=0 onLoad="frames['fslide'].location.href = 'fslide1.html'">
+  <FRAME SCROLLING="no" MARGINHEIGHT=4 SRC="fcontrol.html">
+  <FRAME SCROLLING="auto" NAME="fslide" SRC="fslide1.html">
+</FRAMESET>
+</HTML>

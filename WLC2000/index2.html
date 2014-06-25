@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>The Virtual Learning Lab</TITLE>
+<META NAME="GENERATOR" CONTENT="Corel(R) Presentations(TM) 8 - Publish to HTML">
+<!-- Created in: Corel Presentations 8 -->
+<!-- DO NOT MODIFY THIS FILE -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Activeate cloack
+var First = 1;
+var Last = 7;
+var Slide = 1;
+function FirstSlide()
+{
+   if(Slide != First)
+   {
+      Slide = First;
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   }
+}
+function NextSlide()
+{
+   Slide++;
+   if(Slide <= Last)
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   else
+      Slide--;
+}
+function PreviousSlide()
+{
+   Slide--;
+   if(Slide >= First)
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   else
+      Slide++;
+}
+function LastSlide()
+{
+   if(Slide != Last)
+   {
+      Slide = Last;
+      frames["fslide"].location.href = "fslide"+Slide+".html";
+   }
+}
+function GotoSlide(Where)
+{
+   Slide = Where;
+   frames["fslide"].location.href = "fslide"+Where+".html";
+}
+function table()
+{
+   location.href = "index.html";
+}
+var click=null;
+function rcontrol()
+{
+   click = window.open('remote2.html', 'ControlBar', 'width=370,height=45,resizable=yes,status=no');
+   if (click != null)
+   {
+      location.href = "fslide1.html";
+      if (click.opener == null)
+         click.opener = self;
+   }
+}
+function Goto(slide)
+{
+   var string=slide.options[slide.selectedIndex].text;
+   if (string == "1: The Virtual Learning Lab"){frames["fslide"].location.href = "fslide1.html"; Slide = 1}
+   if (string == "2: Introduction"){frames["fslide"].location.href = "fslide2.html"; Slide = 2}
+   if (string == "3: Key Words"){frames["fslide"].location.href = "fslide3.html"; Slide = 3}
+   if (string == "4: Key Terms Continued"){frames["fslide"].location.href = "fslide4.html"; Slide = 4}
+   if (string == "5: From Simple to Complex and Back Again"){frames["fslide"].location.href = "fslide5.html"; Slide = 5}
+   if (string == "6: Facilitated Teaching and Learning"){frames["fslide"].location.href = "fslide6.html"; Slide = 6}
+   if (string == "7: Hard and Software"){frames["fslide"].location.href = "fslide7.html"; Slide = 7}
+}
+// Deactiveate cloack -->
+</SCRIPT>
+</HEAD>
+<FRAMESET ROWS="70,*" BORDER=0 onLoad="frames['fslide'].location.href = 'fslide1.html'">
+  <FRAME SCROLLING="no" MARGINHEIGHT=4 SRC="fcontrol.html">
+  <FRAME SCROLLING="auto" NAME="fslide" SRC="fslide1.html">
+</FRAMESET>
+</HTML>

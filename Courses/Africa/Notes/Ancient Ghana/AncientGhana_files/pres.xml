@@ -1,0 +1,40 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint">
+ <p:presentation>
+  <p:master id="4" type="main" href="master04.htm" xmlhref="master04.xml"
+   template="Dad`s Tie" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#00172E,#DDDDDD,#5490A8,#CCECFF,#0099CC,#3366CC,#99CCFF,#E1E1B7"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#5490A8,#003366,#0099CC,#3366CC,#99CCFF,#E1E1B7"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#393939,#000000,#CBCBCB,#868686,#4D4D4D,#EAEAEA"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#908A6C,#666633,#808000,#996633,#CCCC00,#D6DEB2"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#656F97,#181848,#6666FF,#333399,#9A9ABC,#D2B6CE"/>
+    <p:colorscheme
+     colors="#000000,#FFFFFF,#CC0066,#CC0099,#FF9900,#CC6600,#009900,#A50021"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="5" type="title" href="master05.htm" xmlhref="master05.xml"
+   layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:slide id="1" href="slide0001.htm" masterhref="master05.htm"
+   layout="title_subtitle" slots="centerTitle,subTitle"/>
+  <p:slide id="2" href="slide0002.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="3" href="slide0003.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="4" href="slide0004.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="5" href="slide0005.htm" layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView"/>
+  <p:font name="Times New Roman" charset="0" type="4"/>
+  <p:font name="Arial" charset="0" type="6" family="34"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:headersfooters noheader="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="30722" style='mso-wrap-style:none'/>
+</xml>

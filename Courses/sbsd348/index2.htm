@@ -1,0 +1,725 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<TITLE>Online Course Materials</TITLE>
+
+<script language="JavaScript">
+<!--
+function divObject(obj) {
+	this.style = obj;
+	this.document = obj.document;
+}
+function simpleArray() {
+	this.item = 0;
+}
+function imgStoreItem(theName, theSrc, w, h) {
+	this.name = theName;
+	this.src = theSrc;
+	this.obj = null;
+	this.w = w;
+	this.h = h;
+	if (theBrowser.canCache) {
+		this.obj = new Image(18, 16);
+		this.obj.src = theSrc;
+	}
+}
+function imgStoreObject() {
+	this.count = -1;
+	this.img = new imgStoreItem;
+	this.find = imgStoreFind;
+	this.add = imgStoreAdd;
+	this.getSrc = imgStoreGetSrc;
+	this.getTag = imgStoreGetTag;
+}
+function imgStoreFind(theName) {
+	var foundItem = -1;
+	for (var i = 0; i <= this.count; i++) {
+		if (this.img[i].name == theName) {
+			foundItem = i;
+			break;
+		}
+	}
+	return foundItem;
+}
+function imgStoreAdd(theName, theSrc, w, h) {
+	if (theSrc) {
+	var i = this.find(theName);
+	if (i == -1) {
+		this.img[++this.count] = new imgStoreItem(theName, theSrc, w, h);
+	} else {
+		this.img[i].name = theName;
+		this.img[i].src = theSrc;
+		this.img[i].w = w;
+		this.img[i].h = h;
+	}
+	}
+}
+function imgStoreGetSrc(theName) {
+	var i = this.find(theName);
+	return (i == -1) ? '' : this.img[i].src;
+}
+function imgStoreGetTag(theName, iconID) {
+	var i = this.find(theName);
+	var Found = '';
+	if (i >= 0) {
+		with (this.img[i]) {
+			if (src != '') {
+				Found = '<img src=' + '"' + src +  '" width=' + w + ' height=' + h + ' border=0 align="top"';
+				if (iconID != '') {
+					Found += ' name="' + iconID + '" ';
+				}
+			}
+		}
+		Found += '>';
+	}
+	return Found;
+}
+// The MenuItem object.  This contains the data and functions for drawing each item.
+function MenuItem (id, type, text, url, status, item, parent) {
+	this.id = id;
+	this.type = type;
+	this.text = text;
+	this.url = url;
+	this.status = status;
+	this.target = "text";
+	this.onClickFunc = "";
+	this.nextItem = item;
+	this.FirstChild = -1;
+	this.parent = parent;
+	this.isopen = false;
+	this.isSelected = false;
+	this.divObj = null;
+	this.spanObj = null;
+	this.draw = DrawItem;
+	this.PMIconName = getPMIconName;
+	this.setImg = setImage;
+	this.setIsOpen = SetIsOpen;
+	this.setSelected = SetSelected;
+	this.mouseOver = mouseOver;
+	this.mouseOut = mouseOut;
+}
+function DrawItem (indentStr) {
+	var tmp = '="return parent.theMenu.entry[' + this.id + '].';
+	var iconTag = imgStore.getTag(this.PMIconName(), 'plusMinusIcon' + this.id);
+	var aLine = '<nobr>' + indentStr;
+	if (this.FirstChild != -1) {
+		aLine += '<A HREF="javascript:parent.theMenu.toggle(' + this.id + ')" name="plusMinus' + this.id + '" ';
+		aLine += 'onMouseOver' + tmp + 'mouseOver(\'plusMinusIcon\');" ';
+		aLine += 'onMouseOut' + tmp + 'mouseOut(\'plusMinusIcon\');">' + iconTag + '</A>';
+	} else {
+		aLine += iconTag;
+	}
+	var imgName = this.type + ((this.isSelected) ? 'Selected' : '');
+	if (imgStore.getSrc(imgName) == '') {imgName = this.type;}
+	var theEntry = imgStore.getTag(imgName, 'docIcon' + this.id) + this.text;
+	aLine += '<SPAN CLASS="' + ((this.FirstChild != -1) ? 'node' : 'leaf') + '">'
+	if ((this.url != '') || (theMenu.wizardInstalled)) {
+		aLine += '<A HREF="';
+		aLine += (theMenu.wizardInstalled) ? 'javascript:void(0)"' : (this.url + '" TARGET="' + this.target +'" ');
+		aLine += 'onClick="parent.theMenu.itemClicked(' + this.id + ');';
+		aLine += (this.onClickFunc != '') ? 'parent.' + this.onClickFunc + ';" ' : '" ';
+		aLine += 'onMouseOver' + tmp + 'mouseOver(\'docIcon\');" ';
+		aLine += 'onMouseOut' + tmp + 'mouseOut(\'docIcon\');">' + theEntry + '</A>';
+	} else {
+		aLine += theEntry;
+	}
+	aLine += '</SPAN></nobr><BR>';
+	return aLine
+}
+function getPMIconName() {
+	var iconName = 'icon' + ((this.FirstChild != -1) ? ((this.isopen == true) ? 'Minus' : 'Plus') : 'Join');
+	iconName += (this.id == 0) ? ((this.nextItem == -1) ? 'Only' : 'Top') : ((this.nextItem == -1) ? 'Bottom' : '');
+	return iconName;
+}
+function setImage(imgID, imgName) {
+	var imgSrc = imgStore.getSrc(imgName);
+	if (imgSrc != '') {
+		if (theBrowser.hasDHTML) {
+			if (this.divObj) { this.divObj.document.images[imgID].src = imgSrc; }
+		} else {
+			if (theBrowser.canCache) {
+				if(self.menu) {
+					if (self.menu.document.images[imgID]) {self.menu.document.images[imgID].src = imgSrc;}
+				}
+			}
+		}
+	}
+}
+function SetIsOpen (isOpen) {
+	if (this.isopen != isOpen) {
+		this.isopen = isOpen;
+		this.setImg('plusMinusIcon' + this.id, this.PMIconName());
+		return true;
+	} else { return false; }
+}
+function SetSelected (isSelected) {
+	this.isSelected = isSelected;
+	this.setImg('docIcon' + this.id, this.type + ((isSelected) ? 'Selected' : ''));
+}
+function mouseOver(imgName) {
+	self.menu.status = '';  //Needed for setStatus to work on MSIE 3 - Go figure!?
+	var newImg = '';
+	if (imgName == 'plusMinusIcon') {
+		newImg = this.PMIconName();
+		setStatus('Click to ' + ((this.isopen == true) ? 'collapse.' : 'expand.'));
+	} else {
+		if (imgName == 'docIcon') {
+			newImg = this.type + ((this.isSelected) ? 'Selected' : '');
+			setStatus(this.status);
+		}
+	}
+	if (theBrowser.canOnMouseOut) { this.setImg(imgName + this.id, newImg + 'MouseOver'); }
+	return true;
+}
+function mouseOut(imgName) {
+	clearStatus();
+	var newImg = '';
+	if (imgName == 'plusMinusIcon') {
+		newImg = this.PMIconName();
+	} else {
+		if (imgName == 'docIcon') {
+		var imgSrc = imgStore.getSrc(imgName);
+			newImg = this.type + ((this.isSelected) ? 'Selected' : '');
+			if (imgStore.getSrc(newImg) == '') { newImg = this.type; }
+		}
+	}
+	if (theBrowser.canOnMouseOut) { this.setImg(imgName + this.id, newImg); }
+	return true;
+}
+// The Menu object.  This is basically an array object although the data in it is a tree.
+function Menu () {
+	this.count = -1;
+	this.autoScrolling = false;
+	this.modalFolders = false;
+	this.linkOnExpand = false;
+	this.toggleOnLink = false;
+	this.lastPMClicked = -1;
+	this.selectedEntry = -1;
+	this.menuTop = 40;
+	this.entryHeight = 16;
+	this.wizardInstalled = false;
+	this.entry = new MenuItem;
+	this.addMenu = AddMenu;
+	this.addChild = AddChild;
+	this.draw = MenuDraw;
+	this.drawALevel = DrawALevel;
+	this.refresh = refreshMenu;
+	this.reload = reloadMenu;
+	this.refreshDHTML = refreshMenuDHTML;
+	this.itemClicked = itemClicked;
+	this.setEntry = setEntry;
+	this.setEntryByURL = setEntryByURL;
+	this.setAll = setAll;
+	this.openAll = openAll;
+	this.closeAll = closeAll;
+	this.findEntry = findEntry;
+	this.toggle = toggle;
+}
+function AddMenu (addTo, type, text, url, status) {
+	var theNI = -1;
+	var theP = -1;
+	if ((url == '') && (theBrowser.canJSVoid)) {url = 'javascript:void(0);';}
+	if (addTo == -1) { addTo = this.count; }
+	
+	if (this.count++ != -1) {
+		theNI = this.entry[addTo].nextItem;
+		theP = this.entry[addTo].parent;
+		this.entry[addTo].nextItem = this.count;
+	}
+	this.entry[this.count] = new MenuItem(this.count, type, text, url, status, theNI, theP);
+	return this.count;
+}
+function AddChild (addTo, type, text, url, status) {
+	if ((url == '') && (theBrowser.canJSVoid)) {url = 'javascript:void(0);';}
+	if (this.count == -1) {
+		this.addMenu (addTo, type, text, url, status);
+	} else {
+		if (addTo < 0) { addTo = this.count; }
+		var childID = this.entry[addTo].FirstChild;
+		if (childID < 0) {
+			this.count++;
+			this.entry[this.count] = new MenuItem(this.count, type, text, url, status, -1, addTo);	
+			this.entry[addTo].FirstChild = this.count;
+		} else {
+			while (this.entry[childID].nextItem != -1) {
+				childID = this.entry[childID].nextItem;
+			}
+			this.addMenu (childID, type, text, url, status)
+		}
+	}
+	return this.count;
+}
+function MenuDraw() {
+	this.drawALevel(0, '', true);
+	if (theBrowser.hasDHTML) {
+		this.refreshDHTML();
+	} else {
+		if ((this.lastPMClicked > 0) && theBrowser.mustMoveAfterLoad) {
+			self.menu.location = self.menu.location.pathname + '#plusMinus' + this.lastPMClicked;
+			this.lastPMClicked = 0;
+		}
+	}
+}
+function DrawALevel(firstItem, indentStr, isVisible) {
+	var currEntry = firstItem;
+	var tempStr = "";
+	var aLine = "";
+	var e = null;
+	while (currEntry > -1) {
+		e = this.entry[currEntry];
+		aLine = e.draw(indentStr);
+		if (theBrowser.hasDHTML) {
+			var menuBottom = (this.count * this.entryHeight) + this.menuTop;
+			var divName = 'entryDIV' + currEntry
+			var spanName = 'entrySPAN' + currEntry
+			aLine = '<DIV ID="' + divName + '" CLASS="menuItem">' + aLine + '</DIV>';
+			self.menu.document.writeln (aLine);
+			if (theBrowser.code == "MSIE") {
+				e.divObj = self.menu.document.all[divName];
+			} else {
+				e.divObj = new divObject(self.menu.document[divName]);
+			}
+			e.divObj.style.top = menuBottom
+		} else {
+			self.menu.document.writeln (aLine);
+		}
+		if (e.FirstChild > -1) {
+			if ((theBrowser.hasDHTML) || (e.isopen && isVisible)) {
+				tempStr = (e.nextItem == -1) ? 'iconBlank' : 'iconLine';
+				this.drawALevel(e.FirstChild, indentStr + imgStore.getTag(tempStr, ''), (e.isopen && isVisible));
+			}
+		}
+		currEntry = e.nextItem;
+	}
+}
+function refreshMenu(positionMenu) {
+	if (theBrowser.hasDHTML) {
+		this.refreshDHTML(positionMenu);
+	} else {
+		this.reload(positionMenu);
+	}
+}
+function reloadMenu(positionMenu) {
+	if (theBrowser.hasDHTML) {
+		self.menu.location.reload();
+	} else {
+		var newLocation = self.menu.location.pathname;
+		if (positionMenu) {
+			if (theBrowser.mustMoveAfterLoad == false) {
+				newLocation += "#plusMinus" + this.lastPMClicked;
+				this.lastPMClicked = 0;
+			}
+		} else {
+			this.lastPMClicked = 0;
+		}
+		if (theBrowser.hasRentrantBug) {
+			setTimeout("self.menu.replace('" + newLocation + "');", 200);
+		} else {
+			self.menu.replace(newLocation);
+		}
+	}
+}
+function refreshMenuDHTML(positionMenu) {
+	var nextItemArray = new simpleArray
+	var level = 1;
+	var currEntry = 0;
+	var isVisible = true;
+	var lastVisibleLevel = 1;
+	var yPos = this.menuTop;
+	var e = null;
+	var s = null;
+	while (level > 0) {
+		e = this.entry[currEntry];
+		s = e.divObj.style
+		if (isVisible) {
+			s.top = yPos;
+			s.visibility = 'visible';
+			yPos += theMenu.entryHeight;
+			lastVisibleLevel = level;
+		} else {
+			s.visibility = 'hidden';
+		}
+		if (e.FirstChild > -1) {
+			isVisible = (e.isopen == true) && isVisible;
+			nextItemArray[level++] = e.nextItem;
+			currEntry = e.FirstChild;
+		} else {
+			if (e.nextItem != -1) {
+				currEntry = e.nextItem;
+			} else {
+				while (level > 0) {
+					if (nextItemArray[--level] != -1) {
+						currEntry = nextItemArray[level];
+						isVisible = (lastVisibleLevel >= level);
+						break;
+					}
+				}
+			}
+		}
+	}
+	var pmc = this.lastPMClicked
+	if (pmc >= 0) {
+		e = this.entry[pmc];
+		var srTop = e.divObj.style.top
+		var srBot = (e.nextItem > 0) ? this.entry[e.nextItem].divObj.style.top : yPos;
+		var curTop = self.menu.pageYOffset;
+		var curBot = curTop + self.menu.innerHeight;
+		if ((srBot > curBot) || (srTop < curTop)) {
+			var scrBy = srBot - curBot;
+			if (srTop < (curTop + scrBy)) { scrBy = srTop - curTop; }
+			self.menu.scrollBy(0, scrBy);
+		}
+	}
+}
+function itemClicked(entryNo) {
+	var e = this.entry[entryNo]
+	if ((e.url != '') && (e.url != 'javascript:void(0);')) {
+		if (this.selectedEntry >= 0) {this.entry[this.selectedEntry].setSelected(false);}
+		this.selectedEntry = entryNo;
+		if (entryNo >= 0) {e.setSelected(true);}
+	}
+	if (this.wizardInstalled) {
+		self.text.menuItemClicked(entryNo);
+	}
+	if (this.toggleOnLink) {this.toggle(entryNo);}
+}
+function setEntry(entryNo, state) {
+	var mc = false;
+	var cl = ',' + entryNo + ',';
+	var e = this.entry[entryNo];
+	this.lastPMClicked = entryNo
+	mc = e.setIsOpen(state) || mc;
+	var p = e.parent;
+	while (p >= 0) {
+		cl += p + ',';
+		e = this.entry[p];
+		mc = (e.setIsOpen(true)) || mc;
+		p = e.parent;
+	}
+	if (this.modalFolders) {
+		for (var i = 0; i <= this.count; i++) {
+			if (cl.indexOf(',' + i + ',') < 0) {
+				mc = this.entry[i].setIsOpen(false) || mc;
+			}
+		}
+	}
+	return mc;
+}
+function setEntryByURL(theURL, state) {
+	var i = this.findEntry(theURL);
+	if (i != -1) {
+		if (this.entry[i].parent != -1) {return this.setEntry(this.entry[i].parent, state);}
+	}
+}
+function setAll(state) {
+	var hasChanged = false;
+	with (parent.theMenu) {
+		for (var i = 0; i <= count; i++) {
+			hasChanged = entry[i].setIsOpen(state) || hasChanged;
+		}
+		if (hasChanged) { refresh(false); }
+	}
+}
+function openAll() { setAll(true); }
+function closeAll() { setAll(false); }
+
+function findEntry(theURL) {
+	var res = -1
+	for (var i = 0; i <= this.count; i++) {
+		if (this.entry[i].url == theURL) {
+			res = i;
+			break;
+		}
+	}
+	return res;
+}
+
+function toggle(entryNo) {
+	var e = this.entry[entryNo]
+	var chg = this.setEntry(entryNo, e.isopen ^ 1);
+	if (this.linkOnExpand && e.isopen && (e.url != '')) {
+		if (myOpener != null) {
+			myOpener.text.location = e.url;
+		} else {
+			self.text.location = e.url;
+		}
+		this.itemClicked(entryNo);
+	}
+	if (chg) {this.refresh(this.autoScrolling && (this.lastPMClicked > 0));}
+}
+// Other functions
+function browserInfo() {
+	this.code = 'unknown';
+	this.version = 0;
+	this.platform = 'Win';
+	
+	var i = navigator.userAgent.indexOf('MSIE');
+	if (i >= 0) {
+		this.code = 'MSIE';
+		this.version = parseFloat(navigator.userAgent.substring(i+5, i+9));
+	} else {
+		i = navigator.userAgent.indexOf('Mozilla/')
+		if (i >= 0) {
+			this.code = 'NS';
+			this.version = parseFloat(navigator.userAgent.substring(i+8, i+12));
+		}
+	}
+	if (navigator.userAgent.indexOf('Mac') >= 0) {this.platform = 'Mac';}
+	if (navigator.userAgent.indexOf('OS/2') >= 0) {this.platform = 'OS/2';}
+	if (navigator.userAgent.indexOf('X11') >= 0) {this.platform = 'UNIX';}
+	
+	this.canCache = ((this.code == 'NS') && (this.version >= 3)) || ((this.code == 'MSIE') && (this.version >= 4)) ;
+	this.canOnMouseOut = ((this.code == 'NS') && (this.version >= 3));
+	this.hasRentrantBug = ((this.code == 'NS') && (this.version == 2.01) && (this.platform != 'Win'));
+	this.canJSVoid = !(((this.code == 'NS') && (this.version < 3)) || ((this.code == 'MSIE') && (this.version < 4)));
+	this.mustMoveAfterLoad = ((this.code == 'NS') && (this.version >= 3));
+	this.hasDHTML = ((this.code == 'NS') && (this.version >= 4)) || ((this.code == 'MSIE') && (this.version >= 4));
+}
+function setStatus(theText) {
+	var theWindow = window;
+	if (getMode() == 'Floating') {theWindow = myOpener;}
+	theWindow.status = theText;
+	if (theBrowser.canOnMouseOut == false) {
+		clearTimeout(statusTimeout);
+		statusTimeout = setTimeout('clearStatus()', 5000);}
+	return true;
+}
+function clearStatus() {
+	var theWindow = window;
+	if (getMode() == 'Floating') {theWindow = myOpener;}
+	if (theWindow != null) {theWindow.status = '';}
+}
+function unloadFloating() {
+	if (myOpener != null) {
+		if (theBrowser.code == 'MSIE') {
+			myOpener.setTimeout('menuClosed();', 10);
+		} else {
+			myOpener.menuClosed();
+		}
+	}
+}
+function getMode() {
+	var cookieText = document.cookie;
+	var theResult = "Frames";
+	if (cookieText.length > 0) {
+		if (cookieText.indexOf("mode=Floating") >= 0) {
+			theResult = "Floating";
+		} else {
+			if (cookieText.indexOf("mode=NoFrames") >= 0) {
+				theResult = "NoFrames";
+			}
+		}
+	}
+	return theResult;
+}
+function initOutlineIcons() {
+	var ip = 'images/menu/';
+	ip += (theBrowser.platform == 'Mac') ? 'mac/' : ((theBrowser.platform == 'OS/2') ? 'os2/' : 'win/')
+	
+	imgStore.add('iconPlusTop', ip + 'plustop.gif', 18, 16);
+	imgStore.add('iconPlus', ip + 'plus.gif', 18, 16);
+	imgStore.add('iconPlusBottom', ip + 'plusbottom.gif', 18, 16);
+	imgStore.add('iconPlusOnly', ip + 'plusonly.gif', 18, 16);
+	imgStore.add('iconMinusTop', ip + 'minustop.gif', 18, 16);
+	imgStore.add('iconMinus', ip + 'minus.gif', 18, 16);
+	imgStore.add('iconMinusBottom', ip + 'minusbottom.gif', 18, 16);
+	imgStore.add('iconMinusOnly', ip + 'minusonly.gif', 18, 16);
+	imgStore.add('iconLine', ip + 'line.gif', 18, 16);
+	imgStore.add('iconBlank', ip + 'blank.gif', 18, 16);
+	imgStore.add('iconJoinTop', ip + 'jointop.gif', 18, 16);
+	imgStore.add('iconJoin', ip + 'join.gif', 18, 16);
+	imgStore.add('iconJoinBottom', ip + 'joinbottom.gif', 18, 16);
+
+	//Add folder and document images to the imgStore.
+	imgStore.add('Folder', ip + 'folderclosed.gif', 18, 16);
+	var di = ip + ((theBrowser.code == 'NS') ? 'document2.gif' : 'document.gif');
+	imgStore.add('Document', di, 18, 16);
+}
+function initialise() {
+	// Set up some options
+	theMenu.autoScrolling = true;	
+	theMenu.modalFolders = false;
+	theMenu.linkOnExpand = false;
+	theMenu.toggleOnLink = false;
+	theMenu.menuTop = 40;
+	theMenu.entryHeight = 16;
+	
+	initOutlineIcons();
+	
+	// Now set up the menu with a whole lot of addMenu and addChild function calls
+	var level1ID = -1;
+	var level2ID = -1;
+	var level3ID = -1;
+
+	level1ID = theMenu.addMenu(level1ID, "Folder", "Syllabus", "syllabus.html", "Online Course Materials");
+	level2ID = theMenu.addChild(level1ID, "Document", "Advising", "advising.html", "Advising and Questions");
+	level2ID = theMenu.addChild(level1ID, "Document", "Course Description", "description.html", "Course Description");
+	level2ID = theMenu.addChild(level1ID, "Document", "Readings", "readings.html", "Required Readings");
+	level2ID = theMenu.addChild(level1ID, "Document", "Semester Schedule", "del_summary.html", "Semester Schedule");	
+
+	level1ID = theMenu.addMenu(level1ID, "Folder", "Major Deliverables", "md_index.htm", "Major Deliverables");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 200", "", "SBSC 200");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210A", "", "SBSC 210A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210B", "", "SBSC 210B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210C", "", "SBSC 210C");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 222sl", "", "SBSC 222sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 224sl", "", "SBSC 224sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 226", "", "SBSC 226");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 248", "", "SBSC 248");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 264asl", "", "SBSC 264asl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 269", "", "SBSC 269");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 273", "", "SBSC 273");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 283A", "", "SBSC 283A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 283B", "", "SBSC 283B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 293", "", "SBSC 293");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 300", "", "SBSC 300");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 308", "", "SBSC 308");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310A", "", "SBSC 310A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310B", "", "SBSC 310B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310C", "", "SBSC 310C");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 322sl", "", "SBSC 322sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 224sl", "", "SBSC 224sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 326", "", "SBSC 326");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 348", "", "SBSC 348");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 355", "", "SBSC 355");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 364asl", "", "SBSC 364asl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 364bsl", "", "SBSC 364bsl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 367sl", "", "SBSC 367sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 369", "", "SBSC 369");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 373", "", "SBSC 373");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 383a", "", "SBSC 383a");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 383b", "", "SBSC 383b");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.1", "", "SBSC 390.1");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.2", "", "SBSC 390.2");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.3", "", "SBSC 390.3");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 393", "", "SBSC 3693");
+	
+level1ID = theMenu.addMenu(level1ID, "Folder", "Lab Deliverables", "labdels.html", "Lab Deliverables");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 200", "", "SBSC 200");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210A", "", "SBSC 210A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210B", "", "SBSC 210B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 210C", "", "SBSC 210C");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 222sl", "", "SBSC 222sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 224sl", "", "SBSC 224sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 226", "", "SBSC 226");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 248", "", "SBSC 248");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 264asl", "", "SBSC 264asl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 269", "", "SBSC 269");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 273", "", "SBSC 273");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 283A", "", "SBSC 283A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 283B", "", "SBSC 283B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 293", "", "SBSC 293");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 300", "", "SBSC 300");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 308", "", "SBSC 308");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310A", "", "SBSC 310A");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310B", "", "SBSC 310B");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 310C", "", "SBSC 310C");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 322sl", "", "SBSC 322sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 224sl", "", "SBSC 224sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 326", "", "SBSC 326");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 348", "", "SBSC 348");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 355", "", "SBSC 355");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 364asl", "", "SBSC 364asl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 364bsl", "", "SBSC 364bsl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 367sl", "", "SBSC 367sl");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 369", "", "SBSC 369");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 373", "", "SBSC 373");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 383a", "", "SBSC 383a");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 383b", "", "SBSC 383b");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.1", "", "SBSC 390.1");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.2", "", "SBSC 390.2");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 390.3", "", "SBSC 390.3");
+	level2ID = theMenu.addChild(level1ID, "Document", "SBSC 393", "", "SBSC 3693");
+
+	level1ID = theMenu.addMenu(level1ID, "Folder", "Project Materials", "", "Project Materials");
+	level2ID = theMenu.addChild(level1ID, "Document", "Related Links", "mayalinks.html", "Related Links");
+	level2ID = theMenu.addChild(level1ID, "Document", "Maps", "maplink.html", "Maps");
+
+	level1ID = theMenu.addMenu(level1ID, "Folder", "Assessment", "", "Assessment (Under Construction!)");
+	
+	level1ID = theMenu.addMenu(level1ID, "Folder", "Other Resources", "", "Other Resources (Under Construction!)");
+}
+
+// Declare global variables
+var theMenu = new Menu;
+var theBrowser = new browserInfo;
+var imgStore = new imgStoreObject;
+var statusTimeout = 0;
+
+var floatingMode = (getMode() == 'Floating');
+var myOpener = null;
+if (floatingMode == true) {
+	if (window.opener) {
+		myOpener = window.opener;
+		myOpener.setTimeout('setGlobals();', 10);
+	} else {
+		document.cookie = 'mode=Frames; path=/';
+		floatingMode = false;
+	}
+}
+
+//	############################   End of Joust   ############################
+
+
+window.defaultStatus = "";	
+//-->
+</script>
+
+</HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+if (self.name == 'menu') {
+	// Sometimes, Netscape will try to load this index inside the menu frame.  I haven't
+	// worked out why but this will detect that situation and reset the location property.
+	self.location = "menu.htm";
+} else {
+	initialise();
+
+	var thePage = 'body.html';
+	var theSearch = self.location.search;
+	if (theSearch != null && theSearch !='') {
+		if (theSearch.length > 1) {
+			thePage = theSearch.substring(1, theSearch.length);
+			theMenu.setEntryByURL(thePage, true);
+		}
+	}
+
+	if (floatingMode) {
+		self.document.writeln('<frameset cols="100%" rows="*,1" onUnload="unloadFloating();">');
+		self.document.writeln('<frame name="menu" src="menu.htm" scrolling="auto" marginwidth="1" marginheight="1">');
+		self.document.writeln('<frame name="menuCntrl" src="menucntrl.htm" scrolling="no" marginwidth="0" marginheight="0">');
+		self.document.writeln('</frameset>');
+	} else {
+		self.document.writeln('<frameset cols="100%" rows="83,*" frameborder="0" framespacing="0" border="0">');
+		self.document.writeln('<frame name="title" src="title.htm" scrolling="no" noresize marginwidth="0" marginheight="0">');
+		self.document.writeln('<frameset cols="230,*" rows="100%" frameborder="0" framespacing="0" border="0">');
+		self.document.writeln('<frameset cols="100%" rows="*,1" frameborder="0" framespacing="0" border="0">');
+		self.document.writeln('<frame name="menu" src="menu.htm" noresize scrolling="auto" marginwidth="0" marginheight="0">');
+		self.document.writeln('<frame name="menuCntrl" src="menucntrl.htm" noresize scrolling="no" marginwidth="0" marginheight="0">');
+		self.document.writeln('</frameset>');
+                self.document.writeln('<frame name="text" noresize src="' + thePage + '" scrolling="auto" marginwidth="0" marginheight="0">');
+                self.document.writeln('</frameset>');
+		self.document.writeln('</frameset>');
+	}
+}
+//-->
+</SCRIPT>
+<NOFRAMES>
+<BODY BGCOLOR=#FFFFFF>
+<h2>This Page Requires a Frames Enabled Browser</h2>
+Your browser does not support JavaScript (if you are using Netscape 3 or higher or Microsoft Internet
+Explorer 4 or higher you may have JavaScript turned off in your network preferences), so this page,
+does not include site navigation features. If you use
+a JavaScript-capable browser, such as Microsoft <A HREF="http://microsoft.com/ie/ie.htm">Internet
+Explorer version 3.0</A> or <A HREF="http://www.netscape.com/comprod/mirror/">Netscape Navigator
+version 3.0</A>, you'll have a better experience navigating around this site.
+<P>
+<I><B>Note:</B> There is a know bug in Netscape Navigator version 4.0.x which will cause you to see this message
+if you have the local cache turned off. There is also a bug in Navigator 4.0.x for the Macintosh</I>
+<P>
+If you have any problems with this site, please contact the Webmaster.
+<P>
+</BODY>
+</noframes>
+
+</HTML>

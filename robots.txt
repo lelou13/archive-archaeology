@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /phpBB2/
+Disallow: /phpbb2/

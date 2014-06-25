@@ -1,0 +1,18 @@
+<HTML>
+<HEAD><TITLE>Add Guest Book Message</TITLE></HEAD>
+<BODY bgcolor=white text=black link=black vlink=black alink=black>
+<CENTER>
+<FONT SIZE=5 COLOR=#996633><B>Add Guest Book Message</B></FONT>
+</CENTER>
+<BR>
+<BR>
+<FORM METHOD=POST ACTION="/cgi-bin/book.pl">
+<TABLE border=0 cellpadding=5>
+<TR><TD>Name (<I>required</I>)</TD><TD><INPUT TYPE=text NAME=name size=40></TD></TR>
+<TR><TD>E-mail</TD><TD><INPUT TYPE=text NAME=email size=40></TD></TR>
+<TR><TD>Comments (<I>required</I>)</TD><TD><TEXTAREA NAME=msg COLS=60 ROWS=4></TEXTAREA></TD></TR>
+<TR><TD></TD><TD><INPUT TYPE=submit VALUE="Add Message"></TD></TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

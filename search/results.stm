@@ -1,0 +1,24 @@
+<RC$title = Search>
+<RC$navurl = /search/index.stm>
+<RC$navname = Search>
+<RCinclude /header.stm>
+
+<FONT SIZE=4>S</FONT>AMBAR 
+<FONT SIZE=4>S</FONT>EARCH 
+<FONT SIZE=4>E</FONT>NGINE
+<P>
+<TABLE cellpadding=5>
+<FORM METHOD=POST ACTION="results.stm">
+<TR><TD align=right><B>Search for: </B></TD>
+<TD align=left>
+<INPUT TYPE=hidden NAME="indexname" VALUE="<RC$indexname>">
+<INPUT TYPE=hidden NAME="style" VALUE="<RC$style>">
+<INPUT TYPE=hidden NAME="spage" VALUE="0">
+<INPUT NAME="query" SIZE=30 VALUE="<RC@txt2html(RC$query)>" MAXLENGTH=40>&nbsp;
+<INPUT TYPE=image SRC="/sysimage/system/go.gif" height=20 width=20 border=0></TD></TR>
+</FORM>
+</TABLE>
+</CENTER>
+<P> 
+<RCXfind query=RC$query indexname=RC$indexname style=RC$style spage=RC$spage maxrows=50 highlight=red>
+<RCinclude /footer.stm>

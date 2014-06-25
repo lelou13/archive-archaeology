@@ -1,0 +1,21 @@
+.usual {
+	FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Georgia, "Times New Roman", Times, serif
+}
+.body {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 24pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+.caption {
+	FONT-SIZE: 10px; COLOR: #000000; LINE-HEIGHT: 12pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.nojustify {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 24pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.headercell {
+	FONT-SIZE: 12px; COLOR: #993300; FONT-FAMILY: Georgia, "Times New Roman", Times, serif
+}
+.smaller {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.imagegallery {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}

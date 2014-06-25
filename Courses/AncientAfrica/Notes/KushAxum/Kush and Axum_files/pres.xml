@@ -1,0 +1,45 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint">
+ <p:presentation hidecomments="t">
+  <p:master id="3" type="main" href="master03.htm" xmlhref="master03.xml"
+   template="Generic" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#000000,#FFFFFF,#800000,#FFFFCC,#777777,#0033CC,#800000,#660066"/>
+    <p:colorscheme
+     colors="#FFFFFF,#009999,#010000,#336699,#CCECFF,#FFFFCC,#FF9966,#FFCC66"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#CBCBCB,#000000,#C0C0C0,#DDDDDD,#5F5F5F,#DDDDDD"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="4" type="title" href="master04.htm" xmlhref="master04.xml"
+   layout="title_subtitle"
+   slots="centerTitle,subTitle,dateTime,footer,slideNumber"/>
+  <p:master id="1" type="notes" href="master01.htm" layout="notes"
+   slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:master id="2" type="handout" href="master02.htm" layout="handout"
+   slots="header,dateTime,footer,slideNumber"/>
+  <p:slide id="1" href="slide0001.htm" masterhref="master04.htm"
+   layout="title_subtitle" slots="centerTitle,subTitle"/>
+  <p:slide id="3" href="slide0003.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="2" href="slide0002.htm" layout="title_body" slots="title,body"/>
+  <p:slide id="4" href="slide0004.htm" layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" slidehref="slide0003.htm" restoredleft="286"
+   restoredtop="907" manualadjustleft="t" manualadjusttop="t"/>
+  <p:slideshowsettings pencolor="schemeText" hidescrollbar="t"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Arial Narrow" charset="0" type="6" family="34"/>
+  <p:font name="Arial" charset="0" type="6" family="34"/>
+  <p:font name="Wingdings" charset="2" type="6" family="2"/>
+  <p:headersfooters slidenumber="t" footerstr="Kush and Axum" noheader="t"
+   nodate="t"/>
+  <p:headersfooters notes="t" slidenumber="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="dual"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="19458">
+  <o:colormru v:ext="edit" colors="#f96,#099,teal,#369,#039"/>
+  <o:colormenu v:ext="edit" fillcolor="none"/>
+ </o:shapedefaults></xml>

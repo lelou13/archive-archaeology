@@ -1,0 +1,36 @@
+<html>
+<head> <TITLE>CSU Monterey Bay - Error: File not Found</TITLE>
+<BASE HREF="http://www.monterey.edu"> </head>
+<body bgcolor="#ffffff" LINK="006666" VLINK="CC9933">
+<IMG SRC="/images/csumb-small-nameplate.gif" ALT="CSUMB Logo"><HR><CENTER><BR><BR><B><FONT COLOR="#ff0000" SIZE=+3>W</FONT><FONT COLOR="#ff0000" SIZE=+2>hoops!</FONT> You misspelled the address <BR>or your bookmark needs to be updated.</FONT></B><P></CENTER><BLOCKQUOTE>
+<BR>
+<BR>
+<H2>Did you have a problem with:</H2>
+<IMG SRC="/images/csumb-3d.gif" ALIGN=right>
+
+<UL>
+<LI>Finding a specific page?
+<LI>Looking for someone in particular?
+<LI>Getting information about our university?
+<LI>Our web site?
+
+</UL>
+<H2>Try one of these services:</H2>
+<UL>
+<LI><A HREF="http://www.monterey.edu">The CSUMB Home Page</A><P>
+<LI><A HREF="/general/">General Information</A><P>
+<LI><A HREF="http://www.monterey.edu/Architext/AT-csumbquery.html">Search the CSUMB Site</A><P>
+<LI><A HREF="/general/directory">Campus Email Directory</A><P>
+<LI><A HREF="/phone.html">Faculty/Staff Directory</A><P>
+<LI><A HREF="/academic/people.html">People (Student, Faculty, and Staff Home Pages)</A><P>
+<LI><A HREF="/cgi-bin/campus_email?a=Web+questions&b=webfolk@infotech.monterey.edu">Technical questions about the web server</A><P>
+<LI><A HREF="/cgi-bin/campus_email?a=Seal+server+questions&b=doug_macintire@monterey.edu">Technical questions about the SEAL server</A>
+</UL>
+<br clear=all>
+<HR>
+</center>
+</BLOCKQUOTE>
+<p align=center>
+<img src="/images/left.gif" width=100><a href="/"><img src="/images/csumb_seal.gif" align=middle border=0 width=50></a><img src="/images/right.gif" width=100>
+</body>
+</html>
